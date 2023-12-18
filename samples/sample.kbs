@@ -1,0 +1,64 @@
+# load image 0
+image "checkmark.bmp"
+
+let pi = 3.1415926
+let x1 = 0
+let y1 = 0
+let x2 = 0
+let y2 = 0
+let cx = 128 / 2
+let cy = 64 / 2
+
+clr()
+
+# draw a circle
+let dail_radius = 40
+let c_step = 7.5
+let deg = 0
+
+let x2 = cx + cos(pi * deg / 180) * dail_radius
+let y2 = cy + sin(pi * deg / 180) * dail_radius
+
+:circle_loop_begin
+	let x1 = cx + cos(pi * deg / 180) * dail_radius
+	let y1 = cy + sin(pi * deg / 180) * dail_radius
+	line(x1, y1, x2, y2, 1)
+	let deg = deg + c_step
+	let x2 = x1
+	let y2 = y1
+if deg <= 360 goto circle_loop_begin
+
+# draw hands
+let m_radius = 25
+let s_radius = 35
+
+let s_rad = 2 * pi * ss / 60
+let m_rad = 2 * pi * (mm + ss / 60) / 60
+
+let x1 = cx
+let y1 = cy
+
+let x2 = cx + cos(s_rad) * s_radius
+let y2 = cy + sin(s_rad) * s_radius 
+line(x1, y1, x2, y2, 1)
+
+let x2 = cx + cos(m_rad) * m_radius
+let y2 = cy + sin(m_rad) * m_radius 
+line(x1, y1, x2, y2, 1)
+
+# draw checkmark image for test
+if ss / 10 % 2 goto skip_checkmark
+	blt(2, 2, 0)
+:skip_checkmark
+
+# format and display time
+let str_time = zeropad(mm, 2) & ":" & zeropad(ss, 2)
+printmini(0, 24, str_time, 1)
+print(0, 56, str_time, 0)
+
+# test, increase hh:mm:ss
+let ss = ss + 1
+if ss < 60 goto skip_update_minute
+	let ss = 0
+	let mm = mm + 1
+:skip_update_minute

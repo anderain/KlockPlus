@@ -217,9 +217,9 @@ int set_time_ui () {
         Bdisp_DrawLineVRAM(tx2, ty1, tx1, ty1);
 
 
-        locate(1, 6); Print((unsigned char *)"\xe6\x90 \xe6\x91       Edit hour");
-        locate(1, 7); Print((unsigned char *)"\xe6\x92 \xe6\x93       Edit minute");
-        locate(1, 8); Print((unsigned char *)"[EXE]     Confirm");
+        locate(1, 6); Print((unsigned char *)"[\xe6\x90] -Hour [\xe6\x91] +Hour");
+        locate(1, 7); Print((unsigned char *)"[\xe6\x92] -Min  [\xe6\x93] +Min");
+        locate(1, 8); Print((unsigned char *)"[EXE] OK  [EXIT] Back");
 
         Bdisp_AreaReverseVRAM(0 , 0, 127, 7);
 
@@ -262,6 +262,7 @@ int set_time_ui () {
 extern const unsigned char ICON_FLASH_MEM[];
 extern const unsigned char ICON_SD_CARD[];
 extern const unsigned char ICON_SETTING[];
+extern const unsigned char IMAGE_BANNER[];
 
 int select_main_ui() {
     unsigned int key;
@@ -269,28 +270,25 @@ int select_main_ui() {
 
     while(1) {
         Bdisp_AllClr_VRAM();
-        locate(7, 1);
-        Print((unsigned char *)"Klock Plus");
-
-        draw_image_raw(16, 16, 32, 32, index == 0, ICON_FLASH_MEM);
-        draw_image_raw(48, 16, 32, 32, index == 1, ICON_SD_CARD);
-        draw_image_raw(80, 16, 32, 32, index == 2, ICON_SETTING);
+        draw_image_raw(0, 0, 40, 64, 0, IMAGE_BANNER);
+        draw_image_raw(44, 20, 24, 24, index == 0, ICON_FLASH_MEM);
+        draw_image_raw(72, 20, 24, 24, index == 1, ICON_SD_CARD);
+        draw_image_raw(100, 20, 24, 24, index == 2, ICON_SETTING);
         if (index == 0) {
-            locate(4, 8);
-            Print((unsigned char *)"Open from flash");
+            PrintMini(58, 51, (unsigned char *)"Browse flash", 0);
         } else if (index == 1) {
             locate(3, 8);
-            Print((unsigned char *)"Open from SD card");
+            PrintMini(54, 51, (unsigned char *)"Browse SD card", 0);
         } else {
 		    locate(8, 8);
-            Print((unsigned char *)"Set time");
+            PrintMini(68, 51, (unsigned char *)"Set time", 0);
 		}
         GetKey(&key);
         if (key == KEY_CTRL_LEFT) {
             index--; if (index < 0) index = 2;
         }
 		else if (key == KEY_CTRL_RIGHT) {
-			index++; if (index > 3) index = 0;	
+			index++; if (index >= 3) index = 0;	
 		}
         else if (key == KEY_CTRL_EXE) {
             if (index == 0) {

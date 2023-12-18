@@ -5,39 +5,42 @@
 #include "preview.h"
 #include "rtc.h"
 
-#define MYKEY_UP        2,9
-#define MYKEY_DOWN      3,8
-#define MYKEY_LEFT      3,9
-#define MYKEY_RIGHT     2,8
-#define MYKEY_ENTER     3,2
-#define MYKEY_ESC       4,8
+// #define MYKEY_UP        2,9
+// #define MYKEY_DOWN      3,8
+// #define MYKEY_LEFT      3,9
+// #define MYKEY_RIGHT     2,8
+// #define MYKEY_ENTER     3,2
+// #define MYKEY_ESC       4,8
 
-#define MYKEY_NUM_0     7,2
-#define MYKEY_NUM_1     7,3
-#define MYKEY_NUM_2     6,3
-#define MYKEY_NUM_3     5,3
-#define MYKEY_NUM_4     7,4
-#define MYKEY_NUM_5     6,4
-#define MYKEY_NUM_6     5,4
-#define MYKEY_NUM_7     7,5
-#define MYKEY_NUM_8     6,5
-#define MYKEY_NUM_9     5,5
+// #define MYKEY_NUM_0     7,2
+// #define MYKEY_NUM_1     7,3
+// #define MYKEY_NUM_2     6,3
+// #define MYKEY_NUM_3     5,3
+// #define MYKEY_NUM_4     7,4
+// #define MYKEY_NUM_5     6,4
+// #define MYKEY_NUM_6     5,4
+// #define MYKEY_NUM_7     7,5
+// #define MYKEY_NUM_8     6,5
+// #define MYKEY_NUM_9     5,5
 
-#define MYKEY_F1        7,10
-#define MYKEY_F2        6,10
-#define MYKEY_F3        5,10
-#define MYKEY_F4        4,10
-#define MYKEY_F5        3,10
-#define MYKEY_F6        2,10
+// #define MYKEY_F1        7,10
+// #define MYKEY_F2        6,10
+// #define MYKEY_F3        5,10
+// #define MYKEY_F4        4,10
+// #define MYKEY_F5        3,10
+// #define MYKEY_F6        2,10
 
-int is_keydown(int code1, int code2) {
-    int kcode1, kcode2; short unused = 0;
-    if (Bkey_GetKeyWait(&kcode1, &kcode2, KEYWAIT_HALTOFF_TIMEROFF, 0, 1, &unused)) {
-        if (kcode1 == code1 && kcode2 == code2)
-            return 1;
-    }
-    return 0;
-}
+#define PRESSED_KEY_IS_EXIT(c1, c2)     ((c1) == 4 && (c2) == 8)
+#define PRESSED_KEY_IS_F1(c1, c2)       ((c1) == 7 && (c2) == 10)
+
+// int is_keydown(int code1, int code2) {
+//     int kcode1, kcode2; short unused = 0;
+//     if (Bkey_GetKeyWait(&kcode1, &kcode2, KEYWAIT_HALTOFF_TIMEROFF, 0, 1, &unused)) {
+//         if (kcode1 == code1 && kcode2 == code2)
+//             return 1;
+//     }
+//     return 0;
+// }
 
 int waitkey() {
     unsigned int key = 0;
@@ -260,6 +263,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     int ret = 1;
     int hh, mm, ss, ms;
     int ticks;
+    int kcode1, kcode2; short unused = 0;
 
     Bdisp_AllClr_VRAM();
 
@@ -274,10 +278,12 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         machine_var_assign_num(machine, 2, (KB_FLOAT)ss);
         machine_var_assign_num(machine, 3, (KB_FLOAT)ms);
 
-        if (is_keydown(MYKEY_F1) || is_keydown(MYKEY_F2) || is_keydown(MYKEY_F3)
-         || is_keydown(MYKEY_F4) || is_keydown(MYKEY_F5) || is_keydown(MYKEY_F6)) {
-            ret = 1;
-            break;
+        if (Bkey_GetKeyWait(&kcode1, &kcode2, KEYWAIT_HALTOFF_TIMEROFF, 0, 1, &unused)) {
+            if (PRESSED_KEY_IS_EXIT(kcode1, kcode2) || PRESSED_KEY_IS_F1(kcode1, kcode2)) {
+                ret = 1;
+                quit = 1;
+                break;
+            }
         }
 
         // execute
@@ -292,11 +298,12 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         // wait for 11 ticks
         // to keep about 12fps
         do {
-        	if (is_keydown(MYKEY_F1) || is_keydown(MYKEY_F2) || is_keydown(MYKEY_F3)
-         	 || is_keydown(MYKEY_F4) || is_keydown(MYKEY_F5) || is_keydown(MYKEY_F6)) {
-                ret = 1;
-                quit = 1;
-                break;
+            if (Bkey_GetKeyWait(&kcode1, &kcode2, KEYWAIT_HALTOFF_TIMEROFF, 0, 1, &unused)) {
+                if (PRESSED_KEY_IS_EXIT(kcode1, kcode2) || PRESSED_KEY_IS_F1(kcode1, kcode2)) {
+                    ret = 1;
+                    quit = 1;
+                    break;
+                }
             }
         } while(RTC_GetTicks() - ticks < 11);
     }

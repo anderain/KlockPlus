@@ -29,14 +29,20 @@ blt(64, 53, 14)
 
 # print time
 let str_time = zeropad(hh, 2) & ":" & zeropad(mm, 2) & ":" & zeropad(ss, 2)
-gprint(64, 20, str_time, 12)
+gprint(69, 20, str_time, 12)
 
 # print welcome message
+if hh < 5 goto late_night_msg
 if hh < 12 goto morning_msg
 if hh < 18 goto afternoon_msg
 
 # evening
 printmini(73, 40, "Good evening", 0)
+goto msg_end
+
+# late night
+:late_night_msg
+printmini(71, 40, "Nighttime now", 0)
 goto msg_end
 
 # morning

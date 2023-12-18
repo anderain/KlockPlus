@@ -1,6 +1,7 @@
 #include <fxlib.h>
 #include <stdio.h>
 #include "preview.h"
+#include "rtc.h"
 
 void char2font(const char * fileName, FONTCHARACTER *font) {
     while (*font++ = *fileName++);
@@ -180,6 +181,82 @@ int select_file_ui(const char *path) {
         if (index < 0) index = file_list_length - 1;
         if (index >= file_list_length) index = 0;
     }
+    return 0;
+}
+
+int set_time_ui () {
+    int hh;
+    int mm;
+    unsigned int key;
+    char buf[80];
+    int tx1 = 49 - 2, ty1 = 20 - 2, tx2 = 49 + 30 + 1, ty2 = 20 + 8 + 1;
+
+    unsigned char datetime[] = {
+        0x20,   // 0 year-1
+        0x23,   // 1 year-2
+        0x06,   // 2 month
+        0x06,   // 3 day
+        0x00,   // 4 hour
+        0x00,   // 5 min
+        0x00,   // 6 sec 
+        0x00    // 7 unused
+    };
+
+    get_time(&hh, &mm, NULL, NULL);
+
+    while (1) {
+        Bdisp_AllClr_VRAM();
+
+        sprintf(buf, "%02d:%02d", hh, mm);
+        locate(1, 1); Print((unsigned char *)"Set time");
+
+        PrintXY(49, 20, (unsigned char *)buf, 1);
+        Bdisp_DrawLineVRAM(tx1, ty1, tx1, ty2);
+        Bdisp_DrawLineVRAM(tx1, ty2, tx2, ty2);
+        Bdisp_DrawLineVRAM(tx2, ty2, tx2, ty1);
+        Bdisp_DrawLineVRAM(tx2, ty1, tx1, ty1);
+
+
+        locate(1, 6); Print((unsigned char *)"\xe6\x90 \xe6\x91       Edit hour");
+        locate(1, 7); Print((unsigned char *)"\xe6\x92 \xe6\x93       Edit minute");
+        locate(1, 8); Print((unsigned char *)"[EXE]     Confirm");
+
+        Bdisp_AreaReverseVRAM(0 , 0, 127, 7);
+
+        GetKey(&key);
+
+        if (key == KEY_CTRL_EXIT) {
+            return 0;
+        }
+        else if (key == KEY_CTRL_UP) {
+            mm--;
+            if (mm < 0) mm = 59;
+        }
+        else if (key == KEY_CTRL_DOWN) {
+            mm++;
+            if (mm >= 60) mm = 0;
+        }
+        else if (key == KEY_CTRL_LEFT) {
+            hh--;
+            if (hh < 0) hh = 23;
+        }
+        else if (key == KEY_CTRL_RIGHT) {
+            hh++;
+            if (hh >= 24) hh = 0;
+        }
+        else if (key == KEY_CTRL_EXE) {
+            break;
+        }
+    }
+    datetime[4] = BASE10_TO_BCD(hh);
+    datetime[5] = BASE10_TO_BCD(mm);
+    RTC_SetDateTime(datetime);
+
+    PopUpWin(1);
+    locate(5, 4); Print((unsigned char *)"Time updated!");
+    GetKey(&key);
+
+    return 1;
 }
 
 extern const unsigned char ICON_FLASH_MEM[];
@@ -189,6 +266,7 @@ extern const unsigned char ICON_SETTING[];
 int select_main_ui() {
     unsigned int key;
     int index = 0;
+
     while(1) {
         Bdisp_AllClr_VRAM();
         locate(7, 1);
@@ -200,10 +278,13 @@ int select_main_ui() {
         if (index == 0) {
             locate(4, 8);
             Print((unsigned char *)"Open from flash");
-        } else {
+        } else if (index == 1) {
             locate(3, 8);
             Print((unsigned char *)"Open from SD card");
-        }
+        } else {
+		    locate(8, 8);
+            Print((unsigned char *)"Set time");
+		}
         GetKey(&key);
         if (key == KEY_CTRL_LEFT) {
             index--; if (index < 0) index = 2;
@@ -218,6 +299,9 @@ int select_main_ui() {
 			else if (index == 1) {
 				select_file_ui("\\\\crd0\\");	
 			}
+            else if (index == 2) {
+                set_time_ui();
+            }
         }
     }
 }

@@ -5,8 +5,6 @@
 #include "preview.h"
 #include "rtc.h"
 
-#define BCD_TO_BASE10(v)    (((v) >> 4) * 10 + ((v) & 0xf))
-
 #define MYKEY_UP        2,9
 #define MYKEY_DOWN      3,8
 #define MYKEY_LEFT      3,9
@@ -251,10 +249,10 @@ kb_machine_t* load_app(const char *filename) {
 void get_time(int *hh, int *mm, int *ss, int *ms) {
     unsigned int bcd_h, bcd_m, bcd_s, bcd_ms;
     RTC_GetTime(&bcd_h, &bcd_m, &bcd_s, &bcd_ms);
-    *hh = BCD_TO_BASE10(bcd_h);
-    *mm = BCD_TO_BASE10(bcd_m);
-    *ss = BCD_TO_BASE10(bcd_s);
-    // *hh = BCD_TO_BASE10(bcd_ms);
+    if (hh) *hh = BCD_TO_BASE10(bcd_h);
+    if (mm) *mm = BCD_TO_BASE10(bcd_m);
+    if (ss) *ss = BCD_TO_BASE10(bcd_s);
+    if (ms) *ms = bcd_ms;
 }
 
 int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {

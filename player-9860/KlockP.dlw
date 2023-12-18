@@ -3,18 +3,18 @@
 [_1]
 Type=5
 Order=1
-Top=1725
-Left=2280
-Height=3525
-Width=10680
+Top=975
+Left=2595
+Height=4455
+Width=10815
 State=0
 Flags=00000020
-Setting=76:56:main.c
+Setting=39:1:preview.c
 OptionA=0
 
 [_2]
 Type=1
-Order=4
+Order=2
 Top=120
 Left=13365
 Height=4740
@@ -48,7 +48,7 @@ OptionA=0
 
 [_5]
 Type=8
-Order=6
+Order=5
 Top=5175
 Left=7755
 Height=4020
@@ -81,7 +81,7 @@ OptionA=0
 
 [_8]
 Type=17
-Order=7
+Order=4
 Top=-15
 Left=-15
 Height=10980
@@ -115,26 +115,26 @@ OptionA=0
 
 [_33]
 Type=16
-Order=2
+Order=6
 Top=90
 Left=2250
 Height=5730
 Width=10605
 State=16
 Flags=00000020
-Setting=279:31:preview.c
+Setting=200:28:main.c
 OptionA=0
 
 [_34]
 Type=16
-Order=5
+Order=7
 Top=75
 Left=2520
 Height=6450
 Width=11715
-State=0
+State=16
 Flags=00000020
-Setting=26:1:main.c
+Setting=1:1:constant.c
 OptionA=0
 
 [_35]
@@ -146,5 +146,5 @@ Height=6105
 Width=15930
 State=16
 Flags=00000020
-Setting=69:24:..\core\kommon.c
+Setting=1:1:..\core\krt.c
 OptionA=0

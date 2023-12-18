@@ -46,7 +46,7 @@ int write_compiled_file(const char *filename, const void * data, int length) {
 }
 
 int build_from_kbasic(const char *filename, const char * output_filename) {
-    kb_error_t      error_ret;
+    kb_build_error_t error_ret;
     kb_context_t    *context;
     int             ret;
     char            *text_buf;
@@ -140,7 +140,7 @@ compile_end:
     }
     else {
         char buf[200];
-        kb_format_error(&error_ret, buf, sizeof(buf));
+        kb_format_build_error(&error_ret, buf, sizeof(buf));
         printf("(%d) ERROR: %s\n", line_count, buf);
     }
 

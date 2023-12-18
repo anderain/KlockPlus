@@ -770,7 +770,10 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
             kb_rt_value *popped = (kb_rt_value *)vl_pop_back(machine->stack);
             char *sz = rtvalue_stringify(popped);
             rtvalue_destroy(popped);
+            // disable "p" on fx9860
+#ifndef fx9860
             printf("%s\n", sz);
+#endif
             free(sz);
             vl_push_back(machine->stack, rtvalue_create_number(0));
             return 1;

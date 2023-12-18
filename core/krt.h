@@ -1,7 +1,16 @@
 #ifndef _KRT_H_
 #define _KRT_H_
 
-#include "kbasic.h"
+// check is sh3 of fx-9860 SDK
+#ifdef _SH3
+#define fx9860
+#endif
+
+#ifdef fx9860
+#   include "../core/kommon.h"
+#else
+#   include "kommon.h"
+#endif
 
 typedef enum {
     KBRE_NO_ERROR,

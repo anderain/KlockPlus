@@ -1,4 +1,4 @@
-#include "kbasic.h"
+#include "kommon.h"
 #include "konstant.h"
 
 extern const unsigned char BYTES_TOM_THUMB_4x6[];

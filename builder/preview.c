@@ -97,8 +97,7 @@ void set_pixel(int x, int y, unsigned int color) {
 #endif
 }
 
-void plot_line (int x0, int y0, int x1, int y1, unsigned int color)
-{
+void plot_line (int x0, int y0, int x1, int y1, unsigned int color) {
   int dx =  abs (x1 - x0), sx = x0 < x1 ? 1 : -1;
   int dy = -abs (y1 - y0), sy = y0 < y1 ? 1 : -1; 
   int err = dx + dy, e2; 

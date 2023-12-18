@@ -10,7 +10,7 @@ if exist FXADDINror.bin  del FXADDINror.bin
 cd ..
 if not exist debug\FXADDINror.bin  goto error
 
-"C:\Program Files\CASIO\fx-9860G SDK\Tools\MakeAddinHeader363.exe" "C:\Documents and Settings\Administrator\My Documents\Workspace\klock_plus\player-9860"
+"C:\Program Files\CASIO\fx-9860G SDK\Tools\MakeAddinHeader363.exe" "C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860"
 if not exist KLOCKP.G1A  goto error
 echo Build has completed.
 goto end

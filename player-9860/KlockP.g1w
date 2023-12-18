@@ -2,14 +2,26 @@
 Name=KlockP
 Version=0.1
 Model=:fx-9860G.dlm
-SourcePath=SRC
+SourcePath=SRC;..\core
 MemoryPath=INIT
 MemCardPath=SDCard
 
 [Program1]
-Program=KLOCKP.G1A
+Program=KlockP.G1A
 Debug=Debug\FXADDINror.dbg
 LoadAddress=80000000:90100000
 
 [Files]
 SourceFile=:main.c
+SourceFile=:preview.c
+SourceFile=..\core\konstant.c
+SourceFile=..\core\krt.c
+SourceFile=..\core\utils.c
+SourceFile=..\core\kommon.c
+HeaderFile=:preview.h
+HeaderFile=..\core\kasset.h
+HeaderFile=..\core\konstant.h
+HeaderFile=..\core\krt.h
+HeaderFile=..\core\utils.h
+HeaderFile=..\core\kommon.h
+HeaderFile=:rtc.h

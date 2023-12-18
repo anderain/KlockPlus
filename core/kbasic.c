@@ -152,36 +152,6 @@ const struct {
     { "OPR_LTEQ",   60  }
 };
 
-const char *_KOCODE_NAME[] = {
-    "NUL",
-    "PUSH_VAR",
-    "PUSH_NUM",
-    "PUSH_STR",
-    "POP",
-    "NEG",
-    "CONCAT",
-    "ADD",
-    "SUB",
-    "MUL",
-    "DIV",
-    "INTDIV",
-    "MOD",
-    "NOT",
-    "AND",
-    "OR",
-    "EQUAL",
-    "NEQ",
-    "GT",
-    "LT",
-    "GTEQ",
-    "LTEQ",
-    "CALL_BUILT_IN",
-    "ASSIGN_VAR",
-    "GOTO",
-    "IFGOTO",
-    "STOP"
-};
-
 #define EN_LCHILD(en) ((en)->children[0])
 #define EN_RCHILD(en) ((en)->children[1])
 
@@ -198,111 +168,6 @@ typedef struct tag_analyzer_t {
     const char *eptr;
     token_t token;
 } analyzer_t;
-
-vlist_node_t* vln_new_node(void *data) {
-    vlist_node_t* n = (vlist_node_t *)malloc(sizeof(vlist_node_t));
-    n->prev = n->next = NULL;
-    n->data = data;
-    return n;
-}
-
-vlist_t* vl_new_list() {
-    vlist_t *l = (vlist_t *)malloc(sizeof(vlist_t));
-    l->head = l->tail = NULL;
-    l->size = 0;
-    return l;
-}
-
-vlist_t* vl_push_back(vlist_t* _self, void *data) {
-    vlist_node_t *new_node = vln_new_node(data);
-
-    if (_self->head == NULL) {
-        _self->head = _self->tail = new_node;
-    }
-    else {
-        vlist_node_t * tail = _self->tail;
-        tail->next = new_node;
-        new_node->prev = tail;
-        _self->tail = new_node;
-    }
-
-    _self->size++;
-
-    return _self;
-}
-
-// void* vl_pop_front(vlist_t* _self) {
-//     vlist_node_t *head;
-//     void *data;
-
-//     head = _self->head;
-
-//     if (head == NULL) return NULL;
-
-//     data = head->data;
-
-//     _self->head = head->next;
-//     if (_self->head) {
-//         _self->head->prev = NULL;
-//     }
-//     else {
-//         _self->tail = NULL;
-//     }
-
-//     free(head);
-//     _self->size--;
-
-//     return data;
-// }
-
-void* vl_pop_back(vlist_t* _self) {
-    vlist_node_t *tail, *prev_tail; 
-    void * data;
-
-    if (_self->size <= 0) {
-        return NULL;
-    }
-
-    tail = _self->tail;
-    data = tail->data;
-
-    if (_self->size == 1) {
-        _self->head = NULL;
-        _self->tail = NULL;
-        free(tail);
-        _self->size = 0;
-        return data;
-    }
-
-    prev_tail = tail->prev;
-    prev_tail->next = NULL;
-    _self->tail = prev_tail;
-    free(tail);
-    _self->size--;
-
-    return data;
-}
-
-void vln_destroy(vlist_node_t* vln, void (* releaseData)(void *)) {
-    if (vln->data != NULL && releaseData) {
-        releaseData(vln->data);
-        vln->data = NULL;
-    }
-    free(vln);
-}
-
-void vl_destroy(vlist_t* _self, void (* releaseData)(void *)) {
-    vlist_node_t *n1, *n2;
-
-    n1 = _self->head;
-    while (n1) {
-        n2 = n1->next;
-        vln_destroy(n1, releaseData);
-        n1 = n2;
-    }
-
-    free(_self);
-}
 
 // --
 
@@ -626,7 +491,7 @@ void display_syntax_error(analyzer_t *_self) {
     printf("^\n");
 }
 
-int check_expr(analyzer_t *_self, kb_error_t *error_ret) {
+int check_expr(analyzer_t *_self, kb_build_error_t *error_ret) {
     int result = match_expr(_self);
     // syntax error
     if (!result) {
@@ -838,7 +703,7 @@ void travel_expr(expr_node_t *en, int tab) {
 
 #define kb_format_error_append(new_part) (p += STR_COPY(p, str_length_max - (p - str_buffer), new_part))
 
-int kb_format_error(const kb_error_t *error_val, char *str_buffer, int str_length_max) {
+int kb_format_build_error(const kb_build_error_t *error_val, char *str_buffer, int str_length_max) {
     char *p = str_buffer;
 
     if (error_val == NULL) {
@@ -1132,7 +997,7 @@ kb_op_command_t* op_command_create_ifgoto(kb_label_t *label) {
     return cmd;
 }
 
-int compile_expr_tree(kb_context_t *context, expr_node_t *node, kb_error_t *error_ret) {
+int compile_expr_tree(kb_context_t *context, expr_node_t *node, kb_build_error_t *error_ret) {
     int i;
 
     for (i = 0; i < node->child_num; ++i) {
@@ -1355,7 +1220,7 @@ kb_context_t * kb_compile_start(const char * line) {
     return context;
 }
 
-int kb_scan_label(const char * line, kb_context_t *context, kb_error_t *error_ret) {
+int kb_scan_label(const char * line, kb_context_t *context, kb_build_error_t *error_ret) {
     analyzer_t      analyzer;
     token_t         *token;
     int             ret;
@@ -1395,7 +1260,7 @@ int kb_scan_label(const char * line, kb_context_t *context, kb_error_t *error_re
     return 1;
 }
 
-int kb_compile_line(const char * line, kb_context_t *context, kb_error_t *error_ret) {
+int kb_compile_line(const char * line, kb_context_t *context, kb_build_error_t *error_ret) {
     analyzer_t      analyzer;
     expr_node_t     *expr_root;
     token_t         *token;

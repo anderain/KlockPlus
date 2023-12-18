@@ -82,7 +82,6 @@ typedef struct {
     vlist_t *   label_list;     // kb_label_t
     // for assets loader
     int (*bmp_load_convert)(const char* filename, int* p_width,int* p_height, unsigned char** p_raw);
-    const char *asset_root_path;
 } kb_context_t;
 
 kb_context_t*   context_create();

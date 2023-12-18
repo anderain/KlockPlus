@@ -33,7 +33,7 @@ typedef struct {
     vlist_t*                stack; // k_rt_value
     kb_op_command_t *       cmd_ptr;
     unsigned char *         raw;
-    kb_rt_value **           variables;
+    kb_rt_value **          variables;
 
     // graph api provider
     int (*graph_clr)();
@@ -52,6 +52,7 @@ kb_machine_t *  machine_create              (unsigned char * raw);
 void            machine_command_reset       (kb_machine_t* machine);
 int             machine_exec                (kb_machine_t* machine, kb_runtime_error_t *error_ret);
 void            machine_destroy             (kb_machine_t* machine);
+int             machine_var_assign_num      (kb_machine_t* machine, int var_index, KB_FLOAT num);
 void            format_exec_error           (const kb_runtime_error_t *error_ret, char *message, int message_length);
 
 #endif

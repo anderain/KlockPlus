@@ -1,0 +1,43 @@
+image "kasio-round-dial.bmp"    # image 0
+
+let pi = 3.1415926
+let x1 = 0
+let y1 = 0
+let x2 = 0
+let y2 = 0
+let cx = 128 / 2
+let cy = 64 / 2
+
+clr()
+
+#draw dial
+blt(0, 0, 0)
+
+# draw hands
+let h_radius = 15
+let m_radius = 25
+let s_radius = 35
+
+let s_rad = 2 * pi * (ss / 60 - 0.25)
+let m_rad = 2 * pi * (mm / 60 - 0.25) + s_rad / 60
+let h_rad = 2 * pi * (hh % 12 / 12 - 0.25) + m_rad / 60
+
+let x1 = cx
+let y1 = cy
+
+let x2 = cx + cos(s_rad) * s_radius
+let y2 = cy + sin(s_rad) * s_radius 
+line(x1, y1, x2, y2, 1)
+
+let x2 = cx + cos(m_rad) * m_radius
+let y2 = cy + sin(m_rad) * m_radius 
+line(x1, y1, x2, y2, 1)
+
+let x2 = cx + cos(h_rad) * h_radius
+let y2 = cy + sin(h_rad) * h_radius 
+line(x1, y1, x2, y2, 1)
+
+# format and display time
+let str_time = zeropad(hh, 2) & ":" & zeropad(mm, 2) & ":" & zeropad(ss, 2)
+line(0, 57, 31, 57, 0)
+printmini(0, 58, str_time, 0)

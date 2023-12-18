@@ -1,5 +1,6 @@
 #include <SDL/SDL.h>
 #include <math.h>
+#include <windows.h>
 #include "preview.h"
 
 #define WHITE   0xffffffff
@@ -15,7 +16,7 @@ SDL_Surface* calc_screen;
 #define WINDOW_COLOR_DEPTH  32
 #define CALC_SCREEN_WIDTH   128
 #define CALC_SCREEN_HEIGHT  64
-#define CALC_SCREEN_ZOOM    4
+#define CALC_SCREEN_ZOOM    3
 
 int is_graphics_ready() {
     return calc_screen != NULL;
@@ -112,11 +113,20 @@ void draw_image (int dx, int dy, int w, int h, int rev, const unsigned char * ra
     int x, y;
     for (y = 0; y < h; ++y) {
         for (x = 0; x < w; ++x) {
-            const K_BYTE eight_pixel = *(raw + y * pitch + x / 8) ^ rev;
+            const K_BYTE eight_pixel = *(raw + y * pitch + x / 8);
             const int dot = (eight_pixel >> (7 - x % 8)) & 1;
-            set_pixel(dx + x, dy + y, dot ? BLACK : WHITE);
+            set_pixel(dx + x, dy + y, dot ^ rev ? BLACK : WHITE);
         }
     }
+}
+
+void get_time(int *hh, int *mm, int *ss, int *ms) {
+    SYSTEMTIME lt;
+    GetLocalTime(&lt);
+    *hh = lt.wHour;
+    *mm = lt.wMinute;
+    *ss = lt.wSecond;
+    *ms = lt.wMilliseconds;
 }
 
 int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
@@ -124,6 +134,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     SDL_Event event;
     SDL_Rect calc_screen_pos;
     int ret = 1;
+    int hh, mm, ss, ms;
 
     calc_screen_pos.x = (WINDOW_WIDTH - CALC_SCREEN_WIDTH * CALC_SCREEN_ZOOM) / 2;
     calc_screen_pos.y = (WINDOW_HEIGHT - CALC_SCREEN_HEIGHT * CALC_SCREEN_ZOOM) / 2;
@@ -154,6 +165,13 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
             break;
             }
         }
+    
+        // fetch time and assign to machine
+        get_time(&hh, &mm, &ss, &ms);
+        machine_var_assign_num(machine, 0, (KB_FLOAT)hh);
+        machine_var_assign_num(machine, 1, (KB_FLOAT)mm);
+        machine_var_assign_num(machine, 2, (KB_FLOAT)ss);
+        machine_var_assign_num(machine, 3, (KB_FLOAT)ms);
 
         // execute
         ret = machine_exec(machine, error_ret);

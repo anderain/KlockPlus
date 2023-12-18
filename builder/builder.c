@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
 #include <time.h>
 #include "../core/kbasic.h"
 #include "convert.h"
@@ -46,7 +45,7 @@ int write_compiled_file(const char *filename, const void * data, int length) {
     return 1;
 }
 
-int build_from_kbasic(const char *filename, const char * output_filename, const char *assets_path) {
+int build_from_kbasic(const char *filename, const char * output_filename) {
     kb_error_t      error_ret;
     kb_context_t    *context;
     int             ret;
@@ -57,9 +56,9 @@ int build_from_kbasic(const char *filename, const char * output_filename, const 
     int             result_byte_length;
     unsigned char * result_raw;
 
-    text_buf = read_text_file("sample.kbs");
+    text_buf = read_text_file(filename);
     if (!text_buf) {
-        puts("failed to read");
+        printf("Failed to load script: '%s'\n", filename);
         return 0;
     }
 
@@ -67,7 +66,6 @@ int build_from_kbasic(const char *filename, const char * output_filename, const 
 
     // set bmp file loader and assets path
     context->bmp_load_convert = k_convert_bmp_asset;
-    context->asset_root_path = assets_path;
 
     // first loop, scan all label
     for (text_ptr = text_buf, line_count = 1; *text_ptr; line_count++) {
@@ -169,25 +167,7 @@ int main(int argc, const char **argv) {
     if (argc == 4 && strcmp(argv[1], "build") == 0) {
         const char *    in_filename = argv[2];
         const char *    out_filename = argv[3];
-        char            path[1000];
-        int             i;
-
-        GetFullPathNameA(in_filename, sizeof(path), path, NULL);
-
-        for (i = strlen(path) - 1; i >= 0; --i) {
-            if (path[i] == '\\') {
-                break;
-            }
-        }
-
-        if (i <= 0) {
-            puts("Invalid script file path...");
-            return -1; 
-        }
-
-        path[i + 1] = '\0';
-
-        build_from_kbasic(in_filename, out_filename, path);
+        build_from_kbasic(in_filename, out_filename);
     }
     else {
 

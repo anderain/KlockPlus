@@ -109,6 +109,26 @@ void machine_destroy(kb_machine_t* machine) {
     free(machine);
 }
 
+int machine_var_assign_num(kb_machine_t* machine, int var_index, KB_FLOAT num) {
+    kb_rt_value* var_value;
+    int var_num = machine->header->variables_num;
+
+    if (var_index < 0 || var_index >= var_num) {
+        return 0;
+    }
+
+    var_value = machine->variables[var_index];
+    if (var_value->type == RVT_NUMBER) {
+        var_value->data.num = num;
+    }
+    else {
+        rtvalue_destroy(var_value);
+        machine->variables[var_index] = rtvalue_create_number(num);
+    }
+
+    return 1;
+}
+
 extern const char *_KOCODE_NAME[];
 
 #define format_exec_error_append(new_part) (p += STR_COPY(p, sizeof(buf) - (p - buf), new_part))

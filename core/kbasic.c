@@ -107,7 +107,6 @@ const struct {
     char * opr_str;
     operator_type_t opr_type_val;
 } OPERATOR_DEFINITION[] = {
-    { "-",  OPR_NEG     },
     { "&",  OPR_CONCAT  },
     { "+",  OPR_ADD     },
     { "-",  OPR_SUB     },
@@ -119,11 +118,13 @@ const struct {
     { "&&", OPR_AND     },
     { "||", OPR_OR      },
     { "=",  OPR_EQUAL   },
-    { "<>",  OPR_NEQ     },
+    { "<>",  OPR_NEQ    },
     { ">",  OPR_GT      },
     { "<",  OPR_LT      },
     { ">=", OPR_GTEQ    },
-    { "<=", OPR_LTEQ    }
+    { "<=", OPR_LTEQ    },
+    // place at bottom, not in use
+    { "-",  OPR_NEG     }
 };
 
 const int OPERATOR_DEFINITION_LENGTH = sizeof(OPERATOR_DEFINITION) / sizeof(OPERATOR_DEFINITION[0]);
@@ -960,7 +961,6 @@ kb_context_t* context_create() {
     context->label_list = vl_new_list();
 
     context->bmp_load_convert = NULL;
-    context->asset_root_path = NULL;
 
     return context;
 }
@@ -1350,6 +1350,7 @@ kb_context_t * kb_compile_start(const char * line) {
     context_set_variable(context, "hh");
     context_set_variable(context, "mm");
     context_set_variable(context, "ss");
+    context_set_variable(context, "ms");
 
     return context;
 }

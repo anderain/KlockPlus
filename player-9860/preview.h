@@ -11,4 +11,7 @@ int start_preview(
 
 kb_machine_t* load_app(const char *filename);
 
+
+void draw_image_raw(int x, int y, int w, int h, int rev, const unsigned char* raw);
+
 #endif

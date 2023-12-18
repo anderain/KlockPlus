@@ -29,6 +29,7 @@ Flags=00001012
 File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
 Line=11
 Flags=00001012
+Sublevel=1
 
 [Breakpoint]
 File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\preview.c
@@ -78,4 +79,47 @@ Flags=00001012
 [Breakpoint]
 File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\preview.c
 Line=86
+Flags=00001012
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
+Line=11
+Flags=00001012
+Sublevel=2
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
+Line=54
+Flags=00001012
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
+Line=56
+Flags=00001012
+Sublevel=1
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
+Line=56
+Flags=00001012
+Sublevel=2
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\preview.c
+Line=135
+Flags=00001012
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\preview.c
+Line=128
+Flags=00001012
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\preview.c
+Line=55
+Flags=00001012
+
+[Breakpoint]
+File=C:\Documents and Settings\Administrator\My Documents\Workspace\klock-plus\player-9860\main.c
+Line=52
 Flags=00001012

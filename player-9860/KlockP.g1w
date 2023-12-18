@@ -18,6 +18,7 @@ SourceFile=..\core\konstant.c
 SourceFile=..\core\krt.c
 SourceFile=..\core\utils.c
 SourceFile=..\core\kommon.c
+SourceFile=:constant.c
 HeaderFile=:preview.h
 HeaderFile=..\core\kasset.h
 HeaderFile=..\core\konstant.h

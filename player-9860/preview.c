@@ -25,6 +25,12 @@
 #define MYKEY_NUM_8     6,5
 #define MYKEY_NUM_9     5,5
 
+#define MYKEY_F1        7,10
+#define MYKEY_F2        6,10
+#define MYKEY_F3        5,10
+#define MYKEY_F4        4,10
+#define MYKEY_F5        3,10
+#define MYKEY_F6        2,10
 
 int is_keydown(int code1, int code2) {
     int kcode1, kcode2; short unused = 0;
@@ -60,6 +66,11 @@ unsigned char *read_binary_file(const char *filename) {
 
     fsize   = Bfile_GetFileSize(fh);
     raw     = (unsigned char *)malloc(fsize);
+
+	if (!raw) {
+    	Bfile_CloseFile(fh);
+		return NULL;
+	}
 
     Bfile_ReadFile(fh, raw, fsize, 0);
     Bfile_CloseFile(fh);
@@ -250,10 +261,12 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     int quit = 0;
     int ret = 1;
     int hh, mm, ss, ms;
+    int ticks;
 
     Bdisp_AllClr_VRAM();
 
     while (!quit) {
+        ticks = RTC_GetTicks();
         Bdisp_AllClr_VRAM();
         
         // fetch time and assign to machine
@@ -263,7 +276,8 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         machine_var_assign_num(machine, 2, (KB_FLOAT)ss);
         machine_var_assign_num(machine, 3, (KB_FLOAT)ms);
 
-        if (is_keydown(MYKEY_ENTER) || is_keydown(MYKEY_ESC)) {
+        if (is_keydown(MYKEY_F1) || is_keydown(MYKEY_F2) || is_keydown(MYKEY_F3)
+         || is_keydown(MYKEY_F4) || is_keydown(MYKEY_F5) || is_keydown(MYKEY_F6)) {
             ret = 1;
             break;
         }
@@ -271,11 +285,22 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         // execute
         ret = machine_exec(machine, error_ret);
         if (!ret) {
-            quit = 0;
+            quit = 1;
             break;
         }
 
         Bdisp_PutDisp_DD();
+
+        // wait for 11 ticks
+        // to keep about 12fps
+        do {
+        	if (is_keydown(MYKEY_F1) || is_keydown(MYKEY_F2) || is_keydown(MYKEY_F3)
+         	 || is_keydown(MYKEY_F4) || is_keydown(MYKEY_F5) || is_keydown(MYKEY_F6)) {
+                ret = 1;
+                quit = 1;
+                break;
+            }
+        } while(RTC_GetTicks() - ticks < 11);
     }
 
     return ret;

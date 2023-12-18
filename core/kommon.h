@@ -116,8 +116,8 @@ typedef struct {
     K_DWORD image_num;              // number of images
 #ifdef fx9860
     KLOCK_IMAGE_META image_meta[1]; // metadata, length should be 0, but
-									// will not be accept by fx-9860 SDK,
-									// so set it to 1 and make it happy
+									// will not be accepted by fx-9860 SDK,
+									// so set length to 1 and make it happy
 #else
     KLOCK_IMAGE_META image_meta[0];
 #endif

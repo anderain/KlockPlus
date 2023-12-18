@@ -2,19 +2,19 @@
 
 [_1]
 Type=5
-Order=2
+Order=1
 Top=1725
 Left=2280
 Height=3525
 Width=10680
 State=0
 Flags=00000020
-Setting=61:28:preview.c
+Setting=76:56:main.c
 OptionA=0
 
 [_2]
 Type=1
-Order=0
+Order=4
 Top=120
 Left=13365
 Height=4740
@@ -48,7 +48,7 @@ OptionA=0
 
 [_5]
 Type=8
-Order=8
+Order=6
 Top=5175
 Left=7755
 Height=4020
@@ -82,7 +82,7 @@ OptionA=0
 [_8]
 Type=17
 Order=7
-Top=135
+Top=-15
 Left=-15
 Height=10980
 Width=2235
@@ -92,59 +92,59 @@ OptionA=0
 
 [_9]
 Type=15
-Order=1
+Order=0
 Top=5205
 Left=2265
 Height=3990
-Width=10800
+Width=11730
 State=0
 Flags=00000000
 OptionA=0
 
 [_32]
 Type=16
-Order=4
+Order=9
 Top=120
 Left=2205
 Height=4590
 Width=5595
-State=0
+State=16
 Flags=00000020
-Setting=24:54:main.c
+Setting=7:30:..\core\konstant.c
 OptionA=0
 
 [_33]
 Type=16
-Order=5
+Order=2
 Top=90
 Left=2250
-Height=3615
-Width=8775
-State=0
+Height=5730
+Width=10605
+State=16
 Flags=00000020
-Setting=278:11:preview.c
+Setting=279:31:preview.c
 OptionA=0
 
 [_34]
 Type=16
-Order=6
-Top=120
-Left=2220
-Height=4395
-Width=10860
+Order=5
+Top=75
+Left=2520
+Height=6450
+Width=11715
 State=0
 Flags=00000020
-Setting=5:1:rtc.h
+Setting=26:1:main.c
 OptionA=0
 
 [_35]
 Type=16
-Order=9
+Order=8
 Top=1980
 Left=1980
 Height=6105
 Width=15930
 State=16
 Flags=00000020
-Setting=1:12:..\core\konstant.c
+Setting=69:24:..\core\kommon.c
 OptionA=0

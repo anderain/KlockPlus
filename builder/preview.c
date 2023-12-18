@@ -3,9 +3,13 @@
 #include <windows.h>
 #include "preview.h"
 
-#define WHITE   0xffffffff
-#define GREY    0xffaaaaaa
-#define BLACK   0xff000000
+#define LOAD_BACKGROUND 1
+
+#define WHITE       0x00ffffff
+#define GREY        0xffaaaaaa
+#define BLACK       0xff000000
+#define BLACK_DOT   0xcc000000
+
 #define swap_int(a, b) { int t = (a); (a) = (b); (b) = t; } NULL
 
 int quit;
@@ -115,7 +119,7 @@ void draw_image (int dx, int dy, int w, int h, int rev, const unsigned char * ra
         for (x = 0; x < w; ++x) {
             const K_BYTE eight_pixel = *(raw + y * pitch + x / 8);
             const int dot = (eight_pixel >> (7 - x % 8)) & 1;
-            set_pixel(dx + x, dy + y, dot ^ rev ? BLACK : WHITE);
+            set_pixel(dx + x, dy + y, dot ^ rev ? BLACK_DOT : WHITE);
         }
     }
 }
@@ -131,6 +135,7 @@ void get_time(int *hh, int *mm, int *ss, int *ms) {
 
 int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     SDL_Surface* screen;
+    SDL_Surface *bg_frame;
     SDL_Event event;
     SDL_Rect calc_screen_pos;
     int ret = 1;
@@ -145,6 +150,17 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_COLOR_DEPTH, SDL_HWSURFACE);
     calc_screen = create_calc_surface();
     quit = 0;
+
+    bg_frame = NULL;
+    if (LOAD_BACKGROUND) {
+	    char buffer[MAX_PATH];
+        int i;
+	    GetModuleFileNameA(NULL, buffer, MAX_PATH);
+        for (i = strlen(buffer) - 1; i >= 0 && buffer[i] != '\\'; --i);
+        buffer[i] = 0;
+        strcpy(buffer + strlen(buffer), "\\px_bg_frame.bmp");
+        bg_frame = SDL_LoadBMP(buffer);
+    }
 
     // clear screen
     SDL_FillRect(screen, NULL, GREY);
@@ -166,6 +182,12 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
             }
         }
     
+        // clear screen
+        SDL_FillRect(screen, NULL, GREY);
+        
+        // plot if bg exist
+        if (bg_frame) SDL_BlitSurface(bg_frame, NULL, screen, NULL);
+
         // fetch time and assign to machine
         get_time(&hh, &mm, &ss, &ms);
         machine_var_assign_num(machine, 0, (KB_FLOAT)hh);
@@ -233,7 +255,7 @@ int provider_set_pixel(int x, int y, int dot) {
     if (!is_graphics_ready()) {
         return 0;
     }
-    set_pixel(x, y, dot ? BLACK : WHITE);
+    set_pixel(x, y, dot ? BLACK_DOT : WHITE);
     return 0;
 }
 
@@ -241,7 +263,7 @@ int provider_plot_line(int x1, int y1, int x2, int y2, int dot) {
     if (!is_graphics_ready()) {
         return 0;
     }
-    plot_line(x1, y1, x2, y2, dot ? BLACK : WHITE);
+    plot_line(x1, y1, x2, y2, dot ? BLACK_DOT : WHITE);
     return 0;
 }
 

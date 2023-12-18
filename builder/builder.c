@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+#include "config.h"
 #include "../core/kbasic.h"
 #include "convert.h"
 #include "preview.h"
@@ -120,20 +120,23 @@ int build_from_kbasic(const char *filename, const char * output_filename) {
 compile_end:
 
     if (is_success) {
-        puts("-------- STRING --------");
-        DBG_print_context_list_text(context);
+        if (builder_config.use_debug) {
+            puts("-------- STRING --------");
+            DBG_print_context_list_text(context);
 
-        puts("-------- VARIABLE --------");
-        DBG_print_context_variables(context);
+            puts("-------- VARIABLE --------");
+            DBG_print_context_variables(context);
 
-        puts("-------- IMAGES --------");
-        DBG_print_context_list_image(context);
+            puts("-------- IMAGES --------");
+            DBG_print_context_list_image(context);
 
-        puts("-------- LABELS --------");
-        DBG_print_context_list_label(context);
+            puts("-------- LABELS --------");
+            DBG_print_context_list_label(context);
 
-        puts("-------- COMMAND --------");
-        DBG_print_context_command_list(context);
+            puts("-------- COMMAND --------");
+            DBG_print_context_command_list(context);
+        }
+        printf("Build success.\n");
     }
     else {
         char buf[200];
@@ -142,14 +145,17 @@ compile_end:
     }
 
     ret = kb_serialize(context, &result_raw, &result_byte_length);
+
     if (ret) {
         ret = write_compiled_file(output_filename, result_raw, result_byte_length);
         if (!ret) {
             puts("Failed to write output file");
         }
 
-        // DBG_print_header((KLOCK_WATCHFACE_HEADER *)result_raw);
-
+        if (builder_config.use_debug) {
+            printf("\nWatchface file header:\n");
+            DBG_print_header((KLOCK_WATCHFACE_HEADER *)result_raw);
+        }
         free(result_raw);
     } else {
         puts("Failed to serialize");
@@ -159,39 +165,4 @@ compile_end:
     free(text_buf);
 
     return is_success ? 1 : 0;
-}
-
-int main(int argc, const char **argv) {
-    srand(time(NULL));
-
-    if (argc == 4 && strcmp(argv[1], "build") == 0) {
-        const char *    in_filename = argv[2];
-        const char *    out_filename = argv[3];
-        build_from_kbasic(in_filename, out_filename);
-    }
-    else {
-
-        const char *        filename = "test.kwf";
-        kb_runtime_error_t  error_ret;
-        int                 ret;
-        kb_machine_t*       app;
-
-        app = load_app(filename);
-        if (!app) {
-            printf("Failed to load '%s'\n", filename);
-            return 1;
-        }
-        DBG_print_header(app->header);
-        
-        ret = start_preview(app, &error_ret);
-        if (!ret) {
-            char error_message[200];
-            format_exec_error(&error_ret, error_message, sizeof(error_message));
-            printf("Runtime Error: %s\n%s\n", filename, error_message);
-        }
-        machine_destroy(app);
-    }
-    // printf("Usage:\n");
-    // printf("Build from KBasic script:\n%s build input_file output_file\n", argv[0]);
-    return 0;
 }

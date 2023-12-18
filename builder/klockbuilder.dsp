@@ -162,6 +162,10 @@ SOURCE=..\core\kbasic.h
 # End Source File
 # Begin Source File
 
+SOURCE=..\core\kommon.h
+# End Source File
+# Begin Source File
+
 SOURCE=..\core\konstant.h
 # End Source File
 # Begin Source File
@@ -179,6 +183,10 @@ SOURCE=..\core\utils.h
 # Begin Source File
 
 SOURCE=..\core\kbasic.c
+# End Source File
+# Begin Source File
+
+SOURCE=..\core\kommon.c
 # End Source File
 # Begin Source File
 

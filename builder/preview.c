@@ -208,7 +208,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         // update screen
         SDL_Flip(screen);
 
-        SDL_Delay(60);
+        SDL_Delay(83);
     }
 
     SDL_Quit();

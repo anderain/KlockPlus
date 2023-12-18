@@ -14,7 +14,7 @@ OptionA=0
 
 [_2]
 Type=1
-Order=3
+Order=0
 Top=240
 Left=13365
 Height=4740
@@ -48,7 +48,7 @@ OptionA=0
 
 [_5]
 Type=8
-Order=6
+Order=5
 Top=5295
 Left=7755
 Height=4020
@@ -81,7 +81,7 @@ OptionA=0
 
 [_8]
 Type=17
-Order=5
+Order=4
 Top=105
 Left=-15
 Height=10980
@@ -92,7 +92,7 @@ OptionA=0
 
 [_9]
 Type=15
-Order=0
+Order=3
 Top=5325
 Left=2265
 Height=3990
@@ -115,14 +115,14 @@ OptionA=0
 
 [_33]
 Type=16
-Order=4
-Top=90
-Left=2250
+Order=6
+Top=195
+Left=2295
 Height=5730
 Width=10605
-State=0
+State=16
 Flags=00000020
-Setting=295:1:preview.c
+Setting=270:20:preview.c
 OptionA=0
 
 [_34]

@@ -277,10 +277,18 @@ int provider_draw_image(int x, int y, int w, int h, int rev, const unsigned char
 kb_machine_t* load_app(const char *filename) {
     unsigned char *raw;
     kb_machine_t *app;
+    KLOCK_WATCHFACE_HEADER *header;
 
     raw = read_binary_file(filename);
 
     if (!raw) {
+        return NULL;
+    }
+
+    header = (KLOCK_WATCHFACE_HEADER *)raw;
+
+    if (header->header_magic != HEADER_MAGIC_FLAG) {
+        free(raw);
         return NULL;
     }
 

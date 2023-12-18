@@ -175,6 +175,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
 
         // execute
         ret = machine_exec(machine, error_ret);
+        // printf("stack: %d\n", machine->stack->size);
         if (!ret) {
             quit = 0;
             break;
@@ -186,7 +187,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
         // update screen
         SDL_Flip(screen);
 
-        SDL_Delay(16);
+        SDL_Delay(60);
     }
 
     SDL_Quit();

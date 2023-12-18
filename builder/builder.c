@@ -189,7 +189,6 @@ int main(int argc, const char **argv) {
             format_exec_error(&error_ret, error_message, sizeof(error_message));
             printf("Runtime Error: %s\n%s\n", filename, error_message);
         }
-
         machine_destroy(app);
     }
     // printf("Usage:\n");

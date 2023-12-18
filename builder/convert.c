@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "bitmap.h"
+#include "../core/kbasic.h"
 #include "../core/kasset.h"
 
 // int k_convert_bmp_asset
@@ -39,7 +40,7 @@ int k_convert_bmp_asset(
 
     width           = info_header.biWidth;
     height          = info_header.biHeight;
-    pitch           = width / 8 + (width % 8 ? 1 : 0);
+    pitch           = KB_IMG_GET_PITCH(width);
     converted       = (unsigned char *)malloc(pitch * height);
     bmp_pitch       = info_header.biSizeImage / height;
     memset(converted, 0, pitch * height);

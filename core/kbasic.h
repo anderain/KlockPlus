@@ -153,6 +153,9 @@ typedef struct {
     K_DWORD height;
 } KLOCK_IMAGE_META;
 
+#define KB_IMG_GET_PITCH(w)         ((w) / 8 + ((w) % 8 ? 1 : 0))
+#define KB_IMG_GET_BYTE_SIZE(w, h)  (KB_IMG_GET_PITCH(w) * (h))
+
 typedef struct {
     // file header
     K_DWORD header_magic;

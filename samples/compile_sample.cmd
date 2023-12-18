@@ -1,3 +1,3 @@
 @echo off
-..\builder\Debug\klockbuilder.exe build sample1.kbs ..\builder\test.kwf
+..\builder\Debug\klockbuilder.exe build sample2-taikonaut.kbs ..\builder\test.kwf
 pause

@@ -1,0 +1,51 @@
+image "t_00.bmp"        # image 0
+image "t_01.bmp"        # image 1
+image "t_02.bmp"        # image 2
+image "t_03.bmp"        # image 3
+image "t_04.bmp"        # image 4
+image "t_05.bmp"        # image 5
+image "t_06.bmp"        # image 6
+image "t_07.bmp"        # image 7
+image "t_08.bmp"        # image 8
+image "t_09.bmp"        # image 9
+image "t_10.bmp"        # image 10
+image "t_11.bmp"        # image 11
+image "font_impact.bmp" # font, image 12
+image "t_top.bmp"       # top decoration, image 13
+image "t_bottom.bmp"    # bottom decoration, image 14
+
+clr()
+
+# update taikonaut index
+let t_index = t_index + 1
+if t_index <= 11 goto skip_reset
+    let t_index = 0
+:skip_reset
+
+# draw image
+blt(0, 0, t_index)
+blt(64, 0, 13)
+blt(64, 53, 14)
+
+# print time
+let str_time = zeropad(hh, 2) & ":" & zeropad(mm, 2) & ":" & zeropad(ss, 2)
+gprint(64, 20, str_time, 12)
+
+# print welcome message
+if hh < 12 goto morning_msg
+if hh < 18 goto afternoon_msg
+
+# evening
+printmini(73, 40, "Good evening", 0)
+goto msg_end
+
+# morning
+:morning_msg
+printmini(73, 40, "Good morning", 0)
+goto msg_end
+
+# after noon
+:afternoon_msg
+printmini(69, 40, "Good afternoon", 0)
+
+:msg_end

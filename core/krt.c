@@ -216,6 +216,9 @@ int machine_exec(kb_machine_t* machine, kb_runtime_error_t *error_ret) {
     while (machine->cmd_ptr - cmd_block_ptr < cmd_num) {
         kb_op_command_t * cmd = machine->cmd_ptr;
 
+
+        // printf("stack: %d\n", machine->stack->size);
+        // getchar();
         // DBG_print_context_command(cmd);
 
         switch(cmd->op) {
@@ -634,6 +637,60 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
             rtvalue_destroy(operand[3]);
             return 1;
         }
+        // print
+        case 12: {
+            exec_pop_and_check_type(3, RVT_NUMBER);
+            exec_pop_and_check_type(2, RVT_STRING);
+            exec_pop_and_check_type(1, RVT_NUMBER);
+            exec_pop_and_check_type(0, RVT_NUMBER);
+            if (machine->graph_draw_image) {
+                int x, y, w, h, offset;
+                int image_index = (int)operand[3]->data.num;
+                int image_num = machine->header->image_num;
+                char *sz;
+                KLOCK_IMAGE_META *meta;
+
+                if (image_index < 0 || image_index >= image_num) {
+                    exec_return_error_with_int(KBRE_INVALID_IMAGE_INDEX, image_index);
+                }
+
+                meta = &machine->header->image_meta[image_index];
+
+                x = (int)operand[0]->data.num;
+                y = (int)operand[1]->data.num;
+                w = meta->width;
+                h = meta->height / 11;
+                offset = KB_IMG_GET_BYTE_SIZE(meta->width, meta->height) / 11;
+
+                if (h > 0) {
+                    sz = operand[2]->data.sz;
+                    for (; *sz; ++sz, x += meta->width) {
+                        int cursor_char_index;
+
+                        if (*sz == ':') {
+                            cursor_char_index = 0;
+                        }
+                        else if (*sz >= '0' && *sz <= '9') {
+                            cursor_char_index = 1 + *sz - '0';
+                        }
+                        else {
+                            continue;
+                        }
+
+                        machine->graph_draw_image(
+                            x, y, w, h, 0,
+                            machine->raw + meta->start + offset * cursor_char_index
+                        );
+                    }
+                }
+            }
+            vl_push_back(machine->stack, rtvalue_create_number(0));
+            rtvalue_destroy(operand[0]);
+            rtvalue_destroy(operand[1]);
+            rtvalue_destroy(operand[2]);
+            rtvalue_destroy(operand[3]);
+            return 1;
+        }
         // line
         case 13: {
             exec_pop_and_check_type(4, RVT_NUMBER);
@@ -702,7 +759,6 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
                     machine->raw + meta->start
                 );
             }
-            vl_push_back(machine->stack, rtvalue_create_number(0));
             rtvalue_destroy(operand[0]);
             rtvalue_destroy(operand[1]);
             rtvalue_destroy(operand[2]);

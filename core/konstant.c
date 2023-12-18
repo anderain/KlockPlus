@@ -1,3 +1,4 @@
+#include "kbasic.h"
 #include "konstant.h"
 
 extern const unsigned char BYTES_TOM_THUMB_4x6[];
@@ -7,12 +8,11 @@ extern const unsigned char BYTES_PORTFOLIO_6x8[];
 #define TOM_THUMB_HEIGHT    6
 #define PORTFOLIO_WIDTH     6
 #define PORTFOLIO_HEIGHT    8
-#define GET_BYTE_SIZE(w, h) ((w) / 8 + (w % 8 ? 1 : 0)) * (h)
 
 const K_BITMAP_FONT_T TOM_THUMB[] = {
     /* width        */  TOM_THUMB_WIDTH, 
     /* height       */  TOM_THUMB_HEIGHT,
-    /* byte_size    */  GET_BYTE_SIZE(TOM_THUMB_WIDTH, TOM_THUMB_HEIGHT),
+    /* byte_size    */  KB_IMG_GET_BYTE_SIZE(TOM_THUMB_WIDTH, TOM_THUMB_HEIGHT),
     /* start_char   */  ' ',
     /* end_char     */  0xea,
     /* data         */  BYTES_TOM_THUMB_4x6
@@ -21,7 +21,7 @@ const K_BITMAP_FONT_T TOM_THUMB[] = {
 const K_BITMAP_FONT_T PORTFOLIO[] = {
     /* width        */  PORTFOLIO_WIDTH, 
     /* height       */  PORTFOLIO_HEIGHT,
-    /* byte_size    */  GET_BYTE_SIZE(PORTFOLIO_WIDTH, PORTFOLIO_HEIGHT),
+    /* byte_size    */  KB_IMG_GET_BYTE_SIZE(PORTFOLIO_WIDTH, PORTFOLIO_HEIGHT),
     /* start_char   */  0x0,
     /* end_char     */  0xff,
     /* data         */  BYTES_PORTFOLIO_6x8

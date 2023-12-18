@@ -68,7 +68,7 @@ LINK32=link.exe
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
 # ADD CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR /YX /FD /GZ /c
 # ADD BASE RSC /l 0x804 /d "_DEBUG"
-# ADD RSC /l 0x804 /d "_DEBUG"
+# ADD RSC /l 0x409 /d "_DEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
@@ -99,6 +99,10 @@ SOURCE=.\convert.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\main.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\preview.c
 # End Source File
 # End Group
@@ -108,6 +112,14 @@ SOURCE=.\preview.c
 # Begin Source File
 
 SOURCE=.\bitmap.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\builder.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\config.h
 # End Source File
 # Begin Source File
 
@@ -121,6 +133,18 @@ SOURCE=.\preview.h
 # Begin Group "Resource Files"
 
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\resource.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\resources.rc
+# End Source File
+# Begin Source File
+
+SOURCE=.\win_icon_48x48.ico
+# End Source File
 # End Group
 # Begin Group "Core"
 

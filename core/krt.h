@@ -2,8 +2,10 @@
 #define _KRT_H_
 
 // check is sh3 of fx-9860 SDK
-#ifdef _SH3
-#define fx9860
+#if defined(_SH3) || defined(_SH4)
+#   ifndef fx9860
+#       define fx9860
+#   endif
 #endif
 
 #ifdef fx9860

@@ -1,6 +1,12 @@
 #ifndef _KOMMON_H_
 #define _KOMMON_H_
 
+#if defined(_SH3) || defined(_SH4)
+#   ifndef fx9860
+#       define fx9860
+#   endif
+#endif
+
 typedef unsigned long K_DWORD;
 typedef unsigned char K_BYTE;
 

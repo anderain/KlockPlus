@@ -145,7 +145,7 @@ KBasic 有五种指令：
 
 我为fx-9860GII设计了可以3D打印的表带：
 
-![watch-strap](C:\gadget-dev\calc-dev\klock-plus\assets\watch-strap.jpg)
+![watch-strap](./assets/watch-strap.jpg)
 
 可以真的把fx-9860当做手表戴在手腕上，稍后你可以在Thingiverse上找到它。
 

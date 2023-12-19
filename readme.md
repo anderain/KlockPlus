@@ -141,6 +141,14 @@ KBasic 有五种指令：
 | 14       | blt(x, y, image_index)         | `RVT_NUMBER` | 在指定位置绘制图片。总是返回 0                               |
 | 15       | p(expr)                        | `RVT_NUMBER` | 在控制台输出参数的内容，只在pc上有效。总是返回 0             |
 
+## 还有什么
+
+我为fx-9860GII设计了可以3D打印的表带：
+
+![watch-strap](C:\gadget-dev\calc-dev\klock-plus\assets\watch-strap.jpg)
+
+可以真的把fx-9860当做手表戴在手腕上，稍后你可以在Thingiverse上找到它。
+
 ## 其他
 
 此项目的 `KlockPlus Builder` 使用了 [SDL](https://www.libsdl.org/)，并在分发时附带了 `SDL.dll`。如果想要自己修改、构建 `KlockPlus Builder`，需要在你的工具链中安装`SDL 1.2`。

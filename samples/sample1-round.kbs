@@ -19,8 +19,8 @@ let m_radius = 25
 let s_radius = 35
 
 let s_rad = 2 * pi * (ss / 60 - 0.25)
-let m_rad = 2 * pi * (mm / 60 - 0.25) + s_rad / 60
-let h_rad = 2 * pi * (hh % 12 / 12 - 0.25) + m_rad / 60
+let m_rad = 2 * pi * ((ss + mm * 60) / 3600 - 0.25)
+let h_rad = 2 * pi * ((hh % 12 * 60 + mm) / 720 - 0.25)
 
 let x1 = cx
 let y1 = cy

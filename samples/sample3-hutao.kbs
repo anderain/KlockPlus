@@ -1,0 +1,20 @@
+image "hutao_wink.bmp" 		# image 0
+image "hutao_main.bmp" 		# image 1
+image "hutao_font.bmp" 		# image 2
+image "hutao_font_xs.bmp" 	# image 3
+
+# draw body
+blt(0, 0, 1)
+
+# wink every 2 seconds
+if ss % 2 goto skip_wink
+blt(53, 36, 0)
+:skip_wink
+
+# print hh:mm
+let str_time = zeropad(hh, 2) & ":" & zeropad(mm, 2)
+gprintv(108, 2, str_time, 2)
+
+# print sm
+let str_time = zeropad(ms, 3)
+gprintv(1, 26, str_time, 3)

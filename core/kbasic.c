@@ -43,7 +43,8 @@ static const FUNC_DEFINITION FUNC_DEFINITION_LIST[] = {
     { "line",       5 },    // 13 x1, y1, x2, y2, dot
     { "pixel",      3 },    // 14 x, y ,dot
     { "blt",        3 },    // 15 x, y, image_index
-    { "p",          1 }     // 16 value
+    { "p",          1 },    // 16 value
+    { "gprintv",    4 }     // 17 x, y, str, image_index
 };
 
 #define is_digit(c) ((c) >= '0' && (c) <= '9')

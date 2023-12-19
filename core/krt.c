@@ -498,6 +498,52 @@ void machine_font_print(kb_machine_t* machine, int x, int y, int rev, const char
     }
 }
 
+
+
+int machine_gprint(kb_machine_t* machine, int x, int y, int image_index, const char * sz, int vertical_mode) {
+    int w, h, offset;
+    int x_movement, y_movement;
+    int image_num = machine->header->image_num;
+    KLOCK_IMAGE_META *meta;
+
+    meta = &machine-> header->image_meta[image_index];
+
+    if (image_index < 0 || image_index >= image_num) {
+        return 0;
+    }
+
+    w = meta->width;
+    h = meta->height / 11;
+    offset = KB_IMG_GET_BYTE_SIZE(meta->width, meta->height) / 11;
+
+    x_movement = vertical_mode ? 0 : w;
+    y_movement = vertical_mode ? h : 0;
+
+    if (h > 0) {
+        for (; *sz; ++sz, x += x_movement, y += y_movement) {
+            int cursor_char_index;
+
+            if (*sz == ':') {
+                cursor_char_index = 0;
+            }
+            else if (*sz >= '0' && *sz <= '9') {
+                cursor_char_index = 1 + *sz - '0';
+            }
+            else {
+                continue;
+            }
+
+            machine->graph_draw_image(
+                x, y, w, h, 0,
+                machine->raw + meta->start + offset * cursor_char_index
+            );
+        }
+    }
+
+    return 1;
+}
+
+
 #define machine_exec_call_built_in_single_arg(math_func) NULL;      \
     exec_pop_and_check_type(0, RVT_NUMBER);                         \
     num_result = (KB_FLOAT)math_func(operand[0]->data.num);         \
@@ -637,51 +683,27 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
             rtvalue_destroy(operand[3]);
             return 1;
         }
-        // print
+        // gprint
         case 12: {
             exec_pop_and_check_type(3, RVT_NUMBER);
             exec_pop_and_check_type(2, RVT_STRING);
             exec_pop_and_check_type(1, RVT_NUMBER);
             exec_pop_and_check_type(0, RVT_NUMBER);
             if (machine->graph_draw_image) {
-                int x, y, w, h, offset;
                 int image_index = (int)operand[3]->data.num;
-                int image_num = machine->header->image_num;
-                char *sz;
-                KLOCK_IMAGE_META *meta;
+                int ret = 0;
 
-                if (image_index < 0 || image_index >= image_num) {
+                ret = machine_gprint(
+                    machine,
+                    (int)operand[0]->data.num,
+                    (int)operand[1]->data.num,
+                    image_index,
+                    operand[2]->data.sz,
+                    0
+                );
+
+                if (!ret) {
                     exec_return_error_with_int(KBRE_INVALID_IMAGE_INDEX, image_index);
-                }
-
-                meta = &machine->header->image_meta[image_index];
-
-                x = (int)operand[0]->data.num;
-                y = (int)operand[1]->data.num;
-                w = meta->width;
-                h = meta->height / 11;
-                offset = KB_IMG_GET_BYTE_SIZE(meta->width, meta->height) / 11;
-
-                if (h > 0) {
-                    sz = operand[2]->data.sz;
-                    for (; *sz; ++sz, x += meta->width) {
-                        int cursor_char_index;
-
-                        if (*sz == ':') {
-                            cursor_char_index = 0;
-                        }
-                        else if (*sz >= '0' && *sz <= '9') {
-                            cursor_char_index = 1 + *sz - '0';
-                        }
-                        else {
-                            continue;
-                        }
-
-                        machine->graph_draw_image(
-                            x, y, w, h, 0,
-                            machine->raw + meta->start + offset * cursor_char_index
-                        );
-                    }
                 }
             }
             vl_push_back(machine->stack, rtvalue_create_number(0));
@@ -776,6 +798,36 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
 #endif
             free(sz);
             vl_push_back(machine->stack, rtvalue_create_number(0));
+            return 1;
+        }
+        // gprintv
+        case 17: {
+            exec_pop_and_check_type(3, RVT_NUMBER);
+            exec_pop_and_check_type(2, RVT_STRING);
+            exec_pop_and_check_type(1, RVT_NUMBER);
+            exec_pop_and_check_type(0, RVT_NUMBER);
+            if (machine->graph_draw_image) {
+                int image_index = (int)operand[3]->data.num;
+                int ret = 0;
+
+                ret = machine_gprint(
+                    machine,
+                    (int)operand[0]->data.num,
+                    (int)operand[1]->data.num,
+                    image_index,
+                    operand[2]->data.sz,
+                    1
+                );
+
+                if (!ret) {
+                    exec_return_error_with_int(KBRE_INVALID_IMAGE_INDEX, image_index);
+                }
+            }
+            vl_push_back(machine->stack, rtvalue_create_number(0));
+            rtvalue_destroy(operand[0]);
+            rtvalue_destroy(operand[1]);
+            rtvalue_destroy(operand[2]);
+            rtvalue_destroy(operand[3]);
             return 1;
         }
     }

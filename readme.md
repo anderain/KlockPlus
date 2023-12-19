@@ -8,6 +8,10 @@ Klock Plus 是一个时钟App展示工具，可以运行在PC / CASIO fx-9860 / 
 
 此项目按照 BSD 协议开源。
 
+## 下载
+
+在这里[下载当前版本的 KlockPlus](https://github.com/anderain/KlockPlus/releases)。包含可执行文件与构建好的样例表盘。
+
 ## 安装
 
 ### 在fx-9860系列上安装

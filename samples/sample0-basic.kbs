@@ -1,0 +1,8 @@
+# 
+print(0, 0, "Basic Clock", 1)
+
+#
+let str_time = zeropad(hh, 2) & ":" & zeropad(mm, 2) & ":" & zeropad(ss, 2)
+
+#
+print(8, 12, str_time, 0)

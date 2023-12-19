@@ -99,6 +99,10 @@ SOURCE=.\convert.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\frame_bg_bmp.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\main.c
 # End Source File
 # Begin Source File

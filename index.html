@@ -1,1 +1,862 @@
-hello klockplus
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>readme</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+.cm-s-inner .cm-variable {
+  color: #fff;
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-property {
+  color: #6699CC;
+}
+
+.cm-s-inner .cm-tag {
+  color: #EC5F67;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid #b8bfc6;
+  z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+  color: #99C794;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+  color: #65737E;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def,
+.cm-s-inner .cm-attribute,
+.cm-s-inner .cm-operator {
+  color: #C594C5;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+  color: #99C794;
+}
+
+.cm-s-inner .cm-hr {
+  color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+  color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+  color: #EC5F67;
+}
+
+.cm-s-inner .cm-positive {
+  color: #99C794;
+}
+
+.cm-s-inner .cm-string-2 {
+  color: #EC5F67;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+  color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+  color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+  color: #5FB3B3;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+  color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+  color: #F99157;
+}
+
+.cm-s-inner .cm-variable {
+  color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+  color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+  background: #4a89dc;
+  color: #fff !important;
+  text-shadow: none;
+}
+
+.CodeMirror-gutters {
+  border-right: none;
+}@import '';
+
+:root {
+  --primary-color: #fcba03;
+  --primary-color-rgb: 252, 186, 3;
+
+  --bg-color: #292929;
+  --bg-color-dark: #1f1f1f;
+  --dark-trait: #141414;
+  --light-trait-100: #3d3d3d;
+  --light-trait-200: #545454;
+  --light-trait-300: #777;
+  --light-trait-400: #8c8c8c;
+
+  --text-color: #f8f8f2;
+  --text-color-secondary: #d2d3d3;
+  --text-highlight-color: #fff;
+  --text-highlight-bg: rgba(var(--primary-color-rgb), 0.3);
+  --select-text-bg-color: rgba(255, 255, 255, 0.2);
+  --search-select-text-color: var(--text-highlight-color);
+  --search-select-bg-color: var(--text-highlight-bg);
+
+  --code-color: #f3b3f8;
+
+  --border-radius: 3px;
+
+  --font-size: 14px;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  --monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+
+  --heading-char-color: var(--light-trait-400);
+  --color-popover-bg-color: var(--text-color);
+  --rawblock-edit-panel-bd: var(--bg-color-dark);
+  --control-text-color: var(--text-color);
+  --meta-content-color: var(--primary-color);
+  --primary-btn-border-color: var(--primary-color);
+  --side-bar-bg-color: var(--bg-color-dark);
+  --item-hover-bg-color: var(--bg-color);
+  --active-file-bg-color: var(--bg-color);
+  --active-file-border-color: var(--bg-color);
+  --window-border: 1px solid var(--bg-color);
+  --focus-ring-color: transparent;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#write {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px;
+  padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+  #write {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  #write {
+    max-width: 1200px;
+  }
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+  margin-top: 30px;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt,
+h1 code,
+h2 tt,
+h2 code,
+h3 tt,
+h3 code,
+h4 tt,
+h4 code,
+h5 tt,
+h5 code,
+h6 tt,
+h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.2em;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--light-trait-100);
+}
+
+h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid var(--light-trait-100);
+}
+
+h3 {
+  font-size: 1.4em;
+  line-height: 1.43;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+  color: var(--light-trait-300);
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+  margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+  margin: 0 0;
+}
+
+hr {
+  height: 2px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: var(--light-trait-100);
+  border: 0 none;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+sup.md-footnote {
+  background-color: var(--light-trait-400);
+  color: var(--light-trait-100);
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul,
+ol {
+  padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+  margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+mark,
+.ty-file-search-match-text,
+.md-search-hit {
+  background: var(--search-select-bg-color);
+  color: var(--search-select-text-color);
+}
+.md-search-hit * {
+  color: var(--search-select-text-color);
+}
+.cm-search-hit.CodeMirror-selectedtext,
+.md-search-hit.md-search-select,
+.md-search-select {
+  outline: 2px solid var(--primary-color);
+}
+.outline-item.select, .ty-search-item-line.select, .ty-search-item.select {
+  outline-width: 2px;
+}
+.outline-item.select {
+  outline-offset: 0px;
+}
+
+blockquote {
+  margin-left: -14px;
+  margin-right: -14px;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--light-trait-300);
+  background-color: var(--light-trait-100);
+  padding: 7px 14px 7px 10px;
+}
+
+blockquote blockquote {
+  padding-right: 0;
+}
+
+table {
+  padding: 0;
+  word-break: initial;
+}
+
+table tr {
+  border-top: 1px solid var(--dark-trait);
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+  background-color: var(--side-bar-bg-color);
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid var(--dark-trait);
+  border-bottom: 0;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid var(--dark-trait);
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+kbd {
+  font-size: 0.875rem;
+  background: var(--bg-color-dark);
+  border: 1px solid var(--dark-trait);
+  box-shadow: 0 2px 0 var(--dark-trait);
+  color: var(--text-color-secondary);
+}
+
+.md-fences,
+code,
+tt {
+  border: 1px solid var(--dark-trait);
+  background-color: var(--bg-color-dark);
+  border-radius: var(--border-radius);
+  padding: 2px 4px 0px 4px;
+  font-size: 0.9em;
+  font-family: var(--monospace);
+}
+
+.md-fences {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  background-color: var(--side-bar-bg-color);
+}
+
+#write pre.md-meta-block {
+  padding: 1rem;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--bg-color-dark);
+  border: 0;
+  border-radius: var(--border-radius);
+  color: var(--light-trait-400);
+  margin-top: 0 !important;
+}
+
+#write .mathjax-block .md-rawblock-tooltip {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+#write .mathjax-block .md-math-container {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+#write .md-mathblock-panel .md-rawblock-control:first-of-type {
+  border-top-left-radius: var(--border-radius);
+}
+
+.md-mathjax-midline {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.md-inline-math script {
+  color: var(--code-color);
+}
+
+code {
+  padding: 0 2px 0 2px;
+}
+
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+
+.code-tooltip {
+  box-shadow: none;
+  border-radius: var(--border-radius);
+}
+
+#write .code-tooltip {
+  bottom: initial;
+  top: 100%;
+  left: initial;
+  right: -1px;
+  background: var(--bg-color-dark);
+  border: 1px solid var(--dark-trait);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0;
+  font-family: var(--monospace);
+}
+
+#write .md-mathblock-panel .code-tooltip {
+  right: 0;
+  border: none;
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid var(--light-trait-200);
+  border-radius: 50%;
+  margin-left: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.3s;
+}
+
+#write .md-task-list-item > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#write .md-task-list-item > input[checked] {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: '✓';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: var(--dark-trait);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.md-image > .md-meta {
+  border-radius: var(--border-radius);
+  padding: 2px 0px 0px 4px;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+.md-toc {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Source mode */
+.CodeMirror.cm-s-typora-default *,
+.cm-s-typora-default * {
+  background: inherit;
+  color: var(--text-color);
+  font-family: var(--monospace);
+  font-size: var(--font-size) !important;
+  font-style: normal;
+  font-weight: normal;
+}
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 2px solid var(--light-trait-400);
+}
+
+.sidebar-tabs {
+  border-bottom: none;
+}
+
+.outline-expander {
+  width: 1.5rem;
+  vertical-align: initial;
+}
+.outline-expander:before,
+.outline-expander:hover:before,
+.outline-item-open > .outline-item > .outline-expander:before,
+.outline-item-open > .outline-item > .outline-expander:hover:before {
+  content: "\f125";
+  transition: transform 125ms ease-in-out;
+}
+.outline-item-open > .outline-item > .outline-expander:hover:before,
+.outline-item-open > .outline-item > .outline-expander:before {
+  transform: rotate(90deg);
+}
+.outline-label:hover {
+  text-decoration: none;
+}
+
+#toc-dropmenu {
+  background: var(--bg-color-dark);
+}
+#toc-dropmenu .outline-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.dropdown-menu .divider {
+  display: none;
+}
+
+.context-menu {
+  background-color: var(--bg-color-dark);
+}
+
+.file-node-background {
+  height: 31px;
+}
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+  visibility: visible;
+}
+.file-node-icon {
+  margin-right: 8px;
+}
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+  outline: none;
+}
+
+/* New file animation */
+.blink-area {
+  animation: none;
+}
+
+.file-list-item-summary {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+#md-searchpanel input {
+  border-radius: var(--border-radius);
+  box-shadow: none;
+}
+#md-searchpanel input:focus {
+  box-shadow: none;
+  border-color: var(--meta-content-color);
+}
+#md-searchpanel .search-type-selection {
+  width: auto;
+}
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+}
+
+.mac-seamless-mode #typora-sidebar {
+  background-color: var(--side-bar-bg-color);
+}
+
+#md-notification .btn {
+  border: 0;
+}
+
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="klock-plus" class="md-header-anchor"></a><span>Klock Plus</span></h1><p><img src="./assets/kb_main.png" style="width: 100%; max-width: 720px; display: block; margin: 12px auto;"/></p><p><span>Klock Plus 是一个时钟App展示工具，可以运行在PC / CASIO fx-9860 / WinCE等平台上。</span></p><p><span>并且可以在PC上构建用户自定义的表盘。</span></p><p><span>此项目按照 BSD 协议开源。</span></p><h2><a name="下载" class="md-header-anchor"></a><span>下载</span></h2><p><span>在这里</span><a href='https://github.com/anderain/KlockPlus/releases'><span>下载当前版本的 KlockPlus</span></a><span>。包含可执行文件与构建好的样例表盘。</span></p><h2><a name="安装" class="md-header-anchor"></a><span>安装</span></h2><h3><a name="在fx-9860系列上安装" class="md-header-anchor"></a><span>在fx-9860系列上安装</span></h3><p><span>将</span><code>KLOCKP.G1A</code><span>安装在 Flash Mem，并将需要展示的表盘文件 </span><code>*.kwf</code><span> 放置在 Flash Mem 或者 SD Card，启动程序即可展示。</span></p><h3><a name="在-windows-ce-上安装" class="md-header-anchor"></a><span>在 Windows CE 上安装</span></h3><p><code>TODO</code></p><h2><a name="制作自定义表盘" class="md-header-anchor"></a><span>制作自定义表盘</span></h2><p><span>用户可以自己编写 </span><code>KBasic Script</code><span>并且使用</span><code>KlockPlus Builder</code><span>来构建</span><code>KWF</code><span>格式的表盘。</span></p><h3><a name="关于-kbasic" class="md-header-anchor"></a><span>关于 KBasic</span></h3><p><span>KBasic 是一种表达绘制流程的简单脚本语言，使用Builder构建，编译为KRT字节码（一个简单的基于堆栈的虚拟机）。</span></p><p><span>表盘 App 加载后，会后循环执行KBasic的代码，并且传入时、分、秒、毫秒等信息来执行绘制表盘，绘制的速度大约是 12 FPS。</span></p><h3><a name="样例" class="md-header-anchor"></a><span>样例</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印一句提示语</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(0, 0, "Basic Clock", 1)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 拼接字符串，格式化时分秒</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">let str_time = zeropad(hh, 2) &amp; ":" &amp; zeropad(mm, 2) &amp; ":" &amp; zeropad(ss, 2)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印时间字符串</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(8, 12, str_time, 0)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 200px;"></div><div class="CodeMirror-gutters" style="display: none; height: 200px;"></div></div></div></pre><p><span>更多的样例请参考 </span><code>samples/</code><span>文件夹下的</span><code>kbs</code><span>文件。</span></p><h3><a name="构建表盘的二进制文件" class="md-header-anchor"></a><span>构建表盘的二进制文件</span></h3><ol start='' ><li><p><span>假设上面的样例保存为文件 </span><code>sample0-basic.kbs</code><span>。</span></p></li><li><p><span>在命令行输入下面的命令来构建</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入脚本文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -o 输出二进制文件名</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder build -i sample0-basic.kbs -o sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 100px;"></div><div class="CodeMirror-gutters" style="display: none; height: 100px;"></div></div></div></pre></li><li><p><span>输入以下的命令来预览</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入二进制文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder preview -i sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 80px;"></div><div class="CodeMirror-gutters" style="display: none; height: 80px;"></div></div></div></pre><p><span>当然，也可以选择直接双击 </span><code>klockbuilder.exe</code><span>，会弹出选择文件的对话框，选择文件来预览。</span></p></li></ol><p><img src="./assets/tutorial-0-preview.png" referrerpolicy="no-referrer" alt="tutorial-0-preview"></p><p><span>KBasic 有五种指令：</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>指令</span></th><th><span>样例</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>image 指令</span></td><td><code>image &quot;bitmap_file_name.bmp&quot;</code></td><td><span>加载 bmp 格式的图片</span></td><td><span>只接受色深为 24bit 的 bmp</span></td></tr><tr><td><span>2</span></td><td><span>let 指令</span></td><td><code>let var_name = expr</code></td><td><span>将 expr 的计算结果赋值给变量 var_name</span></td><td><span>请注意，如果没有let在行首，会被理解为使用=（等于）操作符的表达式，并不会报错</span></td></tr><tr><td><span>3</span></td><td><span>标签指令</span></td><td><code>label_name:</code></td><td><span>跳转标签</span></td><td>&nbsp;</td></tr><tr><td><span>4</span></td><td><span>goto 指令</span></td><td><code>goto label_name</code></td><td><span>无条件跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>5</span></td><td><span>if 指令</span></td><td><code>if expr goto label_name</code></td><td><span>expr 计算结果不为0时跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>6</span></td><td><span>表达式</span></td><td><code>zeropad(hh, 2) &amp; &quot;:&quot; &amp; zeropad(mm, 2)</code><span> </span><br><code>1+2/sin(ms)</code></td><td><span>可以计算的表达式</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3><a name="预定义变量" class="md-header-anchor"></a><span>预定义变量</span></h3><figure><table><thead><tr><th><span>变量名</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><code>hh</code></td><td><span>当前时间的小时</span></td><td>&nbsp;</td></tr><tr><td><code>mm</code></td><td><span>当前时间的的分钟</span></td><td>&nbsp;</td></tr><tr><td><code>ss</code></td><td><span>当前时间的秒</span></td><td>&nbsp;</td></tr><tr><td><code>ms</code></td><td><span>当前时间的毫秒</span></td><td><span>受到 fx-9860 RTC 功能的限制，毫秒的精度是基于1/128秒的，需要注意。</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3><a name="表达式" class="md-header-anchor"></a><span>表达式</span></h3><p><span>表达式可以有两种值，字符串 </span><code>RVT_STRING</code><span> 与 数值</span><code>RVT_NUMBER</code></p><h3><a name="表达式的操作符" class="md-header-anchor"></a><span>表达式的操作符</span></h3><figure><table><thead><tr><th><span>优先级</span></th><th><span>操作符</span></th><th><span>功能</span></th><th><span>样例</span></th></tr></thead><tbody><tr><td><span>500</span></td><td><span>-</span></td><td><span>取负数</span></td><td><code>-a</code><span> </span><br><code>-1.5</code></td></tr><tr><td><span>200</span></td><td><span>*</span></td><td><span>乘法</span></td><td><code>a * b</code></td></tr><tr><td><span>200</span></td><td><span>/</span></td><td><span>除法</span></td><td><code>a / b</code></td></tr><tr><td><span>200</span></td><td><span>%</span></td><td><span>取模</span></td><td><code>a % b</code></td></tr><tr><td><span>200</span></td><td><span>\</span></td><td><span>整数除法</span></td><td><code>a \ b</code></td></tr><tr><td><span>100</span></td><td><span>+</span></td><td><span>加法</span></td><td><code>a + b</code></td></tr><tr><td><span>100</span></td><td><span>-</span></td><td><span>减法</span></td><td><code>a - b</code></td></tr><tr><td><span>90</span></td><td><span>&amp;</span></td><td><span>字符串连接</span></td><td><code>&quot;hello &quot; &amp; &quot;world &amp; 2&quot;</code></td></tr><tr><td><span>60</span></td><td><span>&gt;</span></td><td><span>大于</span></td><td><code>a &gt; b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;</span></td><td><span>小于</span></td><td><code>a &lt; b</code></td></tr><tr><td><span>60</span></td><td><span>&gt;=</span></td><td><span>大于等于</span></td><td><code>a &gt;= b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;=</span></td><td><span>小于等于</span></td><td><code>a &lt;= b</code></td></tr><tr><td><span>50</span></td><td><span>=</span></td><td><span>等于</span></td><td><code>a = b</code></td></tr><tr><td><span>50</span></td><td><span>&lt;&gt;</span></td><td><span>不等于</span></td><td><code>a &lt;&gt; b</code></td></tr><tr><td><span>50</span></td><td><span>!</span></td><td><span>逻辑非</span></td><td><code>!a</code></td></tr><tr><td><span>40</span></td><td><span>&amp;&amp;</span></td><td><span>逻辑与</span></td><td><code>a &amp;&amp; b</code></td></tr><tr><td><span>30</span></td><td><span>|</span><span>|</span></td><td><span>逻辑或</span></td><td><code>a || b</code></td></tr></tbody></table></figure><h3><a name="表达式支持的内建函数" class="md-header-anchor"></a><span>表达式支持的内建函数</span></h3><figure><table><thead><tr><th><span>函数标号</span></th><th><span>函数声明</span></th><th><span>返回值</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>0</span></td><td><span>sin(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正弦</span></td></tr><tr><td><span>1</span></td><td><span>cos(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>余弦</span></td></tr><tr><td><span>2</span></td><td><span>tan(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正切</span></td></tr><tr><td><span>3</span></td><td><span>sqrt(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>平方根</span></td></tr><tr><td><span>4</span></td><td><span>exp(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>指数</span></td></tr><tr><td><span>5</span></td><td><span>abs(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>e为底的指数函数</span></td></tr><tr><td><span>6</span></td><td><span>log(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>对数</span></td></tr><tr><td><span>7</span></td><td><span>rand()</span></td><td><code>RVT_NUMBER</code></td><td><span>范围在区间</span><code>[0, 1)</code><span>的随机数</span></td></tr><tr><td><span>8</span></td><td><span>clr()</span></td><td><code>RVT_NUMBER</code></td><td><span>清除屏幕内容。总是返回 0</span></td></tr><tr><td><span>9</span></td><td><span>zeropad(num, digits)</span></td><td><code>RVT_STRING</code></td><td><span>将数值转化为字符串，长度不足的时候在前方补充0</span></td></tr><tr><td><span>10</span></td><td><span>printmini(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸4x6。总是返回 0</span></td></tr><tr><td><span>11</span></td><td><span>print(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸6x8。总是返回 0</span></td></tr><tr><td><span>12</span></td><td><span>gprint(x, y, str, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>将指定的图片当做包含字符</span><code>:</code><span>与字符</span><code>0-9</code><span>的字体，打印字符串</span><br><span>总是返回 0</span></td></tr><tr><td><span>13</span></td><td><span>line(x0, y0, x1, y1, dot)</span></td><td><code>RVT_NUMBER</code></td><td><span>画线，dot为1是黑色，dot为0时白色。总是返回 0</span></td></tr><tr><td><span>14</span></td><td><span>blt(x, y, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>在指定位置绘制图片。总是返回 0</span></td></tr><tr><td><span>15</span></td><td><span>p(expr)</span></td><td><code>RVT_NUMBER</code></td><td><span>在控制台输出参数的内容，只在pc上有效。总是返回 0</span></td></tr></tbody></table></figure><h2><a name="其他" class="md-header-anchor"></a><span>其他</span></h2><p><span>此项目的 </span><code>KlockPlus Builder</code><span> 使用了 </span><a href='https://www.libsdl.org/'><span>SDL</span></a><span>，并在分发时附带了 </span><code>SDL.dll</code><span>。如果想要自己修改、构建 </span><code>KlockPlus Builder</code><span>，需要在你的工具链中安装</span><code>SDL 1.2</code><span>。</span></p><p><span>此项目的字体使用了 </span><a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?portfolio_6x8'><span>Portfolio 6x8</span></a><span> 与 </span><a href='https://robey.lag.net/2010/01/23/tiny-monospace-font.html'><span>Tom Thumb 4x6</span></a><span>。</span></p><p><span>此项目的吉祥物：狗大哈 · Husky The Big。</span><a href='https://weibo.com/goudaha'><span>记得谢谢狗大哈</span></a><span>！</span></p></div>
+</body>
+</html>

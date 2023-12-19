@@ -3,8 +3,6 @@
 #include <windows.h>
 #include "preview.h"
 
-#define LOAD_BACKGROUND 1
-
 #define WHITE       0x00ffffff
 #define GREY        0xffaaaaaa
 #define BLACK       0xff000000
@@ -132,6 +130,9 @@ void get_time(int *hh, int *mm, int *ss, int *ms) {
     *ms = lt.wMilliseconds;
 }
 
+extern unsigned char frame_bg_bmp[];
+extern unsigned int frame_bg_bmp_len;
+
 int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     SDL_Surface* screen;
     SDL_Surface *bg_frame;
@@ -151,15 +152,7 @@ int start_preview(kb_machine_t * machine, kb_runtime_error_t *error_ret) {
     quit = 0;
 
     bg_frame = NULL;
-    if (LOAD_BACKGROUND) {
-	    char buffer[MAX_PATH];
-        int i;
-	    GetModuleFileNameA(NULL, buffer, MAX_PATH);
-        for (i = strlen(buffer) - 1; i >= 0 && buffer[i] != '\\'; --i);
-        buffer[i] = 0;
-        strcpy(buffer + strlen(buffer), "\\px_bg_frame.bmp");
-        bg_frame = SDL_LoadBMP(buffer);
-    }
+    bg_frame = SDL_LoadBMP_RW(SDL_RWFromConstMem(frame_bg_bmp, frame_bg_bmp_len), 1);
 
     // clear screen
     SDL_FillRect(screen, NULL, GREY);

@@ -1,0 +1,8 @@
+#include "Font_canele_12.c"
+#include "Osb_a.c"
+#include "Osb_arrow_down.c"
+#include "Osb_arrow_left.c"
+#include "Osb_arrow_right.c"
+#include "Osb_arrow_up.c"
+#include "Osb_b.c"
+#include "Osb_close.c"

@@ -14,13 +14,25 @@ Klock Plus 是一个时钟App展示工具，可以运行在PC / CASIO fx-9860 / 
 
 ## 安装
 
-### 在fx-9860系列上安装
+### 1. 在fx-9860系列上安装
 
 将`KLOCKP.G1A`安装在 Flash Mem，并将需要展示的表盘文件 `*.kwf` 放置在 Flash Mem 或者 SD Card，启动程序即可展示。
 
-### 在 Windows CE 上安装
+### 2. 在 Windows CE 上安装
 
-`TODO`
+#### 2.1 Windows CE1.0 & CE1.01
+
+因为CE.1x并不支持 `GetModuleFileName` API。所以需要把所有KWF文件放在根目录下。在其他地方运行`KlockP`开头的exe即可。
+
+#### 2.2 Windows CE 2.x
+
+在CE2.x下把exe与KWF文件放在同个目录下即可。
+
+#### 2.3 更高版本
+
+可以启动，但是文件不能被正确列出，请按照CE1.x的情况把KWF文件放在系统根目录下。
+
+![showcase2](./assets/showcase2.webp)
 
 ## 制作自定义表盘
 
@@ -122,24 +134,25 @@ KBasic 有五种指令：
 
 ### 表达式支持的内建函数
 
-| 函数标号 | 函数声明                       | 返回值       | 附注                                                         |
-| -------- | ------------------------------ | ------------ | ------------------------------------------------------------ |
-| 0        | sin(a)                         | `RVT_NUMBER` | 正弦                                                         |
-| 1        | cos(a)                         | `RVT_NUMBER` | 余弦                                                         |
-| 2        | tan(a)                         | `RVT_NUMBER` | 正切                                                         |
-| 3        | sqrt(a)                        | `RVT_NUMBER` | 平方根                                                       |
-| 4        | exp(a)                         | `RVT_NUMBER` | 指数                                                         |
-| 5        | abs(a)                         | `RVT_NUMBER` | e为底的指数函数                                              |
-| 6        | log(a)                         | `RVT_NUMBER` | 对数                                                         |
-| 7        | rand()                         | `RVT_NUMBER` | 范围在区间`[0, 1)`的随机数                                   |
-| 8        | clr()                          | `RVT_NUMBER` | 清除屏幕内容。总是返回 0                                     |
-| 9        | zeropad(num, digits)           | `RVT_STRING` | 将数值转化为字符串，长度不足的时候在前方补充0                |
-| 10       | printmini(x, y, str, rev)      | `RVT_NUMBER` | 打印字符串，字体尺寸4x6。总是返回 0                          |
-| 11       | print(x, y, str, rev)          | `RVT_NUMBER` | 打印字符串，字体尺寸6x8。总是返回 0                          |
-| 12       | gprint(x, y, str, image_index) | `RVT_NUMBER` | 将指定的图片当做包含字符`:`与字符`0-9`的字体，打印字符串<br />总是返回 0 |
-| 13       | line(x0, y0, x1, y1, dot)      | `RVT_NUMBER` | 画线，dot为1是黑色，dot为0时白色。总是返回 0                 |
-| 14       | blt(x, y, image_index)         | `RVT_NUMBER` | 在指定位置绘制图片。总是返回 0                               |
-| 15       | p(expr)                        | `RVT_NUMBER` | 在控制台输出参数的内容，只在pc上有效。总是返回 0             |
+| 函数标号 | 函数声明                        | 返回值       | 附注                                                         |
+| -------- | ------------------------------- | ------------ | ------------------------------------------------------------ |
+| 0        | sin(a)                          | `RVT_NUMBER` | 正弦                                                         |
+| 1        | cos(a)                          | `RVT_NUMBER` | 余弦                                                         |
+| 2        | tan(a)                          | `RVT_NUMBER` | 正切                                                         |
+| 3        | sqrt(a)                         | `RVT_NUMBER` | 平方根                                                       |
+| 4        | exp(a)                          | `RVT_NUMBER` | 指数                                                         |
+| 5        | abs(a)                          | `RVT_NUMBER` | e为底的指数函数                                              |
+| 6        | log(a)                          | `RVT_NUMBER` | 对数                                                         |
+| 7        | rand()                          | `RVT_NUMBER` | 范围在区间`[0, 1)`的随机数                                   |
+| 8        | clr()                           | `RVT_NUMBER` | 清除屏幕内容。总是返回 0                                     |
+| 9        | zeropad(num, digits)            | `RVT_STRING` | 将数值转化为字符串，长度不足的时候在前方补充0                |
+| 10       | printmini(x, y, str, rev)       | `RVT_NUMBER` | 打印字符串，字体尺寸4x6。总是返回 0                          |
+| 11       | print(x, y, str, rev)           | `RVT_NUMBER` | 打印字符串，字体尺寸6x8。总是返回 0                          |
+| 12       | gprint(x, y, str, image_index)  | `RVT_NUMBER` | 将指定的图片当做包含字符`:`与字符`0-9`的字体，打印字符串<br />总是返回 0 |
+| 13       | line(x0, y0, x1, y1, dot)       | `RVT_NUMBER` | 画线，dot为1是黑色，dot为0时白色。总是返回 0                 |
+| 14       | blt(x, y, image_index)          | `RVT_NUMBER` | 在指定位置绘制图片。总是返回 0                               |
+| 15       | p(expr)                         | `RVT_NUMBER` | 在控制台输出参数的内容，只在pc上有效。总是返回 0             |
+| 16       | gprintv(x, y, str, image_index) | `RVT_NUMBER` | 与`gprint`功能相同，但是打印方向是竖向。 <br />总是返回 0    |
 
 ## 还有什么
 

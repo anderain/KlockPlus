@@ -232,193 +232,125 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 }
 
 
-
-
-.cm-s-inner .cm-variable {
-  color: #fff;
-}
-
-.cm-s-inner .cm-keyword,
-.cm-s-inner .cm-property {
-  color: #6699CC;
-}
-
-.cm-s-inner .cm-tag {
-  color: #EC5F67;
-}
-
-.CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid #b8bfc6;
-  z-index: 3;
-}
-
-.cm-s-inner .cm-string {
-  color: #99C794;
-}
-
-.cm-s-inner .cm-comment,
-.cm-s-inner.cm-comment {
-  color: #65737E;
-}
-
-.cm-s-inner .cm-header,
-.cm-s-inner .cm-def,
-.cm-s-inner.cm-header,
-.cm-s-inner.cm-def,
-.cm-s-inner .cm-attribute,
-.cm-s-inner .cm-operator {
-  color: #C594C5;
-}
-
-.cm-s-inner .cm-quote,
-.cm-s-inner.cm-quote {
-  color: #99C794;
-}
-
-.cm-s-inner .cm-hr {
-  color: #d8d5d5;
-}
-
-.cm-s-inner .cm-link {
-  color: #d3d3ef;
-}
-
-.cm-s-inner .cm-negative {
-  color: #EC5F67;
-}
-
-.cm-s-inner .cm-positive {
-  color: #99C794;
-}
-
-.cm-s-inner .cm-string-2 {
-  color: #EC5F67;
-}
-
-.cm-s-inner .cm-meta,
-.cm-s-inner .cm-qualifier {
-  color: #b7b3b3;
-}
-
-.cm-s-inner .cm-builtin {
-  color: #f3b3f8;
-}
-
-.cm-s-inner .cm-bracket {
-  color: #5FB3B3;
-}
-
-.cm-s-inner .cm-atom,
-.cm-s-inner.cm-atom {
-  color: #84B6CB;
-}
-
-.cm-s-inner .cm-number {
-  color: #F99157;
-}
-
-.cm-s-inner .cm-variable {
-  color: #b8bfc6;
-}
-
-.cm-s-inner .cm-variable-2 {
-  color: #9FBAD5;
-}
-
-.cm-s-inner .cm-variable-3 {
-  color: #1cc685;
-}
-
-.CodeMirror-selectedtext,
-.CodeMirror-selected {
-  background: #4a89dc;
-  color: #fff !important;
-  text-shadow: none;
-}
-
-.CodeMirror-gutters {
-  border-right: none;
-}@import '';
-
 :root {
-  --primary-color: #fcba03;
-  --primary-color-rgb: 252, 186, 3;
-
-  --bg-color: #292929;
-  --bg-color-dark: #1f1f1f;
-  --dark-trait: #141414;
-  --light-trait-100: #3d3d3d;
-  --light-trait-200: #545454;
-  --light-trait-300: #777;
-  --light-trait-400: #8c8c8c;
-
-  --text-color: #f8f8f2;
-  --text-color-secondary: #d2d3d3;
-  --text-highlight-color: #fff;
-  --text-highlight-bg: rgba(var(--primary-color-rgb), 0.3);
-  --select-text-bg-color: rgba(255, 255, 255, 0.2);
-  --search-select-text-color: var(--text-highlight-color);
-  --search-select-bg-color: var(--text-highlight-bg);
-
-  --code-color: #f3b3f8;
-
-  --border-radius: 3px;
-
-  --font-size: 14px;
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-  --monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
-
-  --heading-char-color: var(--light-trait-400);
-  --color-popover-bg-color: var(--text-color);
-  --rawblock-edit-panel-bd: var(--bg-color-dark);
-  --control-text-color: var(--text-color);
-  --meta-content-color: var(--primary-color);
-  --primary-btn-border-color: var(--primary-color);
-  --side-bar-bg-color: var(--bg-color-dark);
-  --item-hover-bg-color: var(--bg-color);
-  --active-file-bg-color: var(--bg-color);
-  --active-file-border-color: var(--bg-color);
-  --window-border: 1px solid var(--bg-color);
-  --focus-ring-color: transparent;
+	--text-color: #c8d1d9;
+	--bg-color: #0d1117;
+	--side-bar-bg-color: #0d1117;
+	--control-text-color: #a9aaab;
+	--primary-color: #f9826c;
+	--primary-btn-border-color: #f9826c;
+	--active-file-text-color: inherit;
+	--active-file-border-color: #f9826c;
+	--active-file-bg-color: #0d1117;
+	--primary-btn-text-color: #f9826c;
+	--window-border: 0 solid #0d1117;
+	--item-hover-bg-color: #161b22;
+	--item-hover-text-color: #f9826c;
+	--meta-content-color: #f9826c;
+	--search-select-text-color: #f9826c;
+	--control-text-color: var(--text-color);
+	--control-text-hover-color: var(--text-color);
+	--heading-char-color: #f9826c;
+	--active-toggle-btn-color: #192133;
+	--blur-text-color: rgba(200, 200, 200, 0.33);
+	--rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+	--select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+	--select-text-font-color: #fff !important;
+	--color-border-secondary: #21262d !important;
+	--mermaid-node-color: #b87f62 !important;
+	--mermaid-node-border: #bd7958;
+	--mermaid-contrast-color: #afe61d;
+	--mermaid-theme: dark;
+	--monospace: ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
 }
 
-html {
-  font-size: var(--font-size);
+.pane-group {
+	background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+	background-color: var(--bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color) !important;
+	color: #8b949e !important;
+}
+
+.dropdown-menu>li>a {
+	border-left: 1px solid var(--bg-color);
+	border-right: 1px solid var(--bg-color);
+	color: var(--text-color) !important;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: var(--item-hover-bg-color);
+	border-left: 1px solid var(--bg-color);
+	border-right: 1px solid var(--bg-color);
+	color: var(--text-color) !important;
 }
 
 body {
-  font-family: var(--font-family);
-  -webkit-font-smoothing: antialiased;
-  color: var(--text-color);
-  line-height: 1.6;
+	line-height: 1.5;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
 }
 
 #write {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 30px;
-  padding-bottom: 100px;
+	background-color: var(--bg-color) !important;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 30px;
 }
 
 @media only screen and (min-width: 1400px) {
-  #write {
-    max-width: 1024px;
-  }
+	#write {
+		max-width: 1024px;
+	}
 }
 
 @media only screen and (min-width: 1800px) {
-  #write {
-    max-width: 1200px;
-  }
+	#write {
+		max-width: 1200px;
+	}
 }
 
-#write > ul:first-child,
-#write > ol:first-child {
-  margin-top: 30px;
+#write>ul:first-child,
+#write>ol:first-child {
+	font-weight: 500;
+	margin-top: 30px;
 }
 
-a {
-  color: var(--primary-color);
+content {
+	background-color: var(--bg-color) !important;
 }
 
 h1,
@@ -427,12 +359,54 @@ h3,
 h4,
 h5,
 h6 {
-  position: relative;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  line-height: 1.4;
-  cursor: text;
+	color: var(--text-color);
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 400;
+	padding-top: 5px;
+}
+
+html {
+	font-size: 13px;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+#write {
+	text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-weight: bold;
+	line-height: 1.5;
+	cursor: text;
 }
 
 h1:hover a.anchor,
@@ -441,415 +415,1717 @@ h3:hover a.anchor,
 h4:hover a.anchor,
 h5:hover a.anchor,
 h6:hover a.anchor {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 h1 tt,
-h1 code,
+h1 code {
+	font-size: inherit;
+}
+
 h2 tt,
-h2 code,
+h2 code {
+	font-size: inherit;
+}
+
 h3 tt,
-h3 code,
+h3 code {
+	font-size: inherit;
+}
+
 h4 tt,
-h4 code,
+h4 code {
+	font-size: inherit;
+}
+
 h5 tt,
-h5 code,
+h5 code {
+	font-size: inherit;
+}
+
 h6 tt,
 h6 code {
-  font-size: inherit;
+	font-size: inherit;
 }
 
 h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.2em;
-  line-height: 1.3;
-  border-bottom: 1px solid var(--light-trait-100);
+	font-size: 2.6rem;
+	padding-bottom: .15rem;
+	border-bottom: 1px solid var(--color-border-secondary);
 }
 
 h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid var(--light-trait-100);
+	font-size: 1.9rem;
+	padding-bottom: .15rem;
+	border-bottom: 1px solid var(--color-border-secondary);
 }
 
 h3 {
-  font-size: 1.4em;
-  line-height: 1.43;
+	font-size: 1.7rem;
 }
 
 h4 {
-  font-size: 1.2em;
+	font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1em;
+	font-size: 1.2rem;
 }
 
 h6 {
-  font-size: 1em;
-  color: var(--light-trait-300);
+	font-size: 1rem;
+	color: rgb(139, 148, 158);
 }
 
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-  margin: 0.8em 0;
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+	content: '';
+	border: 0;
 }
 
-li > ol,
-li > ul {
-  margin: 0 0;
+p {
+	color: var(--text-color);
+	line-height: 1.20rem;
+	margin: 0 0 1.25rem;
 }
 
-hr {
-  height: 2px;
-  padding: 0;
-  margin: 16px 0;
-  background-color: var(--light-trait-100);
-  border: 0 none;
-  overflow: hidden;
-  box-sizing: content-box;
+kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font: 11px ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
+	line-height: 10px;
+	color: #b1bac4;
+	vertical-align: middle;
+	background-color: var(--bg-color);
+	border-bottom-color: #6e7681;
+	border: 1px solid #6e7681;
+	border-radius: 6px;
+	box-shadow: inset 0 -1px 0 #6e7681;
 }
 
-sup.md-footnote {
-  background-color: var(--light-trait-400);
-  color: var(--light-trait-100);
-}
-
-li p.first {
-  display: inline-block;
-}
-
-ul,
-ol {
-  padding-left: 30px;
-}
-
-ul:first-child,
-ol:first-child {
-  margin-top: 0;
-}
-
-ul:last-child,
-ol:last-child {
-  margin-bottom: 0;
-}
-
-mark,
-.ty-file-search-match-text,
-.md-search-hit {
-  background: var(--search-select-bg-color);
-  color: var(--search-select-text-color);
-}
-.md-search-hit * {
-  color: var(--search-select-text-color);
-}
-.cm-search-hit.CodeMirror-selectedtext,
-.md-search-hit.md-search-select,
-.md-search-select {
-  outline: 2px solid var(--primary-color);
-}
-.outline-item.select, .ty-search-item-line.select, .ty-search-item.select {
-  outline-width: 2px;
-}
-.outline-item.select {
-  outline-offset: 0px;
-}
-
-blockquote {
-  margin-left: -14px;
-  margin-right: -14px;
-  border-radius: var(--border-radius);
-  border-left: 4px solid var(--light-trait-300);
-  background-color: var(--light-trait-100);
-  padding: 7px 14px 7px 10px;
-}
-
-blockquote blockquote {
-  padding-right: 0;
+p {
+	font-size: 1.25rem;
+	line-height: 1.5;
 }
 
 table {
-  padding: 0;
-  word-break: initial;
+	font-size: 1.25rem;
 }
 
-table tr {
-  border-top: 1px solid var(--dark-trait);
-  margin: 0;
-  padding: 0;
+
+a,
+.md-def-url {
+	color: #58a6ff;
+	text-decoration: none;
 }
 
-table tr:nth-child(2n),
-thead {
-  background-color: var(--side-bar-bg-color);
+a:hover {
+	color: #58a6ff;
+	text-decoration: underline;
+}
+
+/* Summary */
+.md-toc {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.md-toc-content {
+	background-color: var(--item-hover-bg-color) !important;
+	border-radius: 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#write div.md-toc-tooltip {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+	padding-left: 5px;
+	font-size: 1.4rem;
+	color: var(--text-color);
+}
+
+.md-toc:focus .md-toc-content {
+	border: 1px solid var(--item-hover-bg-color);
+}
+
+.md-delete-toc {
+	color: var(--text-color);
+}
+
+table {
+	margin-bottom: 20px;
+	line-height: 24px;
+}
+
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: middle;
+	border-top: 1px solid #3D454D;
+}
+
+table th {
+	font-weight: 700;
+	padding: 6px 13px;
+}
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0;
+}
+
+table tbody+tbody {
+	border-top: 2px solid #3D454D;
 }
 
 table tr th {
-  font-weight: bold;
-  border: 1px solid var(--dark-trait);
-  border-bottom: 0;
-  margin: 0;
-  padding: 6px 13px;
+	border: 1px solid #324560;
+	border-bottom: solid 2px #3D454D;
+	border-bottom: 0;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 16px;
 }
 
 table tr td {
-  border: 1px solid var(--dark-trait);
-  margin: 0;
-  padding: 6px 13px;
+	background: #192534;
+	border: 1px solid #3D454D;
+	margin: 0;
+	padding: 10px 16px;
 }
 
 table tr th:first-child,
 table tr td:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 table tr th:last-child,
 table tr td:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
-kbd {
-  font-size: 0.875rem;
-  background: var(--bg-color-dark);
-  border: 1px solid var(--dark-trait);
-  box-shadow: 0 2px 0 var(--dark-trait);
-  color: var(--text-color-secondary);
+table {
+	padding: 0;
+	word-break: initial;
+}
+
+table tr {
+	border-top: 1px solid #3D454D;
+	margin: 0;
+	padding: 0;
+}
+
+thead {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+table tr th {
+	border: 1px solid #3D454D;
+	border-bottom: solid 2px #ccc;
+	border-bottom: 0;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 16px;
+}
+
+table tr td {
+	background: #192534;
+	border: 1px solid #3D454D;
+	margin: 0;
+	padding: 10px 16px;
+	line-height: 1.6rem;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+	margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+	margin-bottom: 0;
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(1n) td {
+	background-color: var(--item-hover-bg-color);
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(2n) td {
+	background-color: var(--bg-color);
 }
 
 .md-fences,
-code,
 tt {
-  border: 1px solid var(--dark-trait);
-  background-color: var(--bg-color-dark);
-  border-radius: var(--border-radius);
-  padding: 2px 4px 0px 4px;
-  font-size: 0.9em;
-  font-family: var(--monospace);
-}
-
-.md-fences {
-  margin-bottom: 15px;
-  margin-top: 15px;
-  padding-top: 8px;
-  padding-bottom: 6px;
-  background-color: var(--side-bar-bg-color);
-}
-
-#write pre.md-meta-block {
-  padding: 1rem;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: var(--bg-color-dark);
-  border: 0;
-  border-radius: var(--border-radius);
-  color: var(--light-trait-400);
-  margin-top: 0 !important;
-}
-
-#write .mathjax-block .md-rawblock-tooltip {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
-#write .mathjax-block .md-math-container {
-  border-top-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-}
-
-#write .md-mathblock-panel .md-rawblock-control:first-of-type {
-  border-top-left-radius: var(--border-radius);
-}
-
-.md-mathjax-midline {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.md-inline-math script {
-  color: var(--code-color);
+	color: var(--item-hover-bg-color);
+	font-size: 1.05rem;
+	font-weight: 500;
 }
 
 code {
-  padding: 0 2px 0 2px;
+	padding: .18rem .4rem .22rem;
+	margin: 0;
+	font-size: 1.05rem;
+	background-color: #343941;
+	border-radius: 6px;
+	font-family: ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
+	font-weight: 500;
+	line-height: 1.5;
 }
 
-.CodeMirror-lines {
-  padding-left: 4px;
+.md-fences {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	padding-bottom: 6px;
+	padding-top: 88px;
+	color: var(--text-color);
+}
+
+.file-tree-node {
+	padding-top: 2px;
+}
+
+#write pre.md-meta-block {
+	background-color: var(--item-hover-bg-color);
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 100%;
+	line-height: 1.45;
+	margin-top: 0 !important;
+	padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-image>.md-meta {
+	border-radius: 6px;
+	color: inherit;
+	font-size: .9rem;
+	padding: 2px 0 0 4px;
+}
+
+.md-tag {
+	color: #70bfd9;
+	opacity: 1;
+}
+
+.CodeMirror-line {
+	padding-left: 15px;
 }
 
 .code-tooltip {
-  box-shadow: none;
-  border-radius: var(--border-radius);
+	background: var(--item-hover-bg-color);
+	border: 1px solid var(--item-hover-bg-color);
+	box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+	border-radius: 6px;
 }
 
-#write .code-tooltip {
-  bottom: initial;
-  top: 100%;
-  left: initial;
-  right: -1px;
-  background: var(--bg-color-dark);
-  border: 1px solid var(--dark-trait);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: 0;
-  font-family: var(--monospace);
+/* Yellow border when focusing Code block language input */
+.code-tooltip .ty-input {
+	border: 0;
 }
 
-#write .md-mathblock-panel .code-tooltip {
-  right: 0;
-  border: none;
+/* Languages suggestions Menu */
+.auto-suggest-container {
+	background-color: var(--item-hover-bg-color);
+	border: 1px solid var(--item-hover-bg-color);
+	color: var(--text-color);
+	border-radius: 6px;
 }
 
-#write .md-task-list-item > input {
-  -webkit-appearance: initial;
-  display: block;
-  position: absolute;
-  border: 1px solid var(--light-trait-200);
-  border-radius: 50%;
-  margin-left: -1.8rem;
-  height: 1.2rem;
-  width: 1.2rem;
-  transition: background 0.3s;
+.dropdown-menu {
+	color: #70c0d8;
+	margin-right: 5px;
 }
 
-#write .md-task-list-item > input:focus {
-  outline: none;
-  box-shadow: none;
+.md-fences {
+	padding: .3rem;
+	font-size: .9rem;
+	margin-left: .2rem;
+	margin-right: .2rem;
 }
 
-#write .md-task-list-item > input[checked] {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1.105rem;
+	padding: 0;
+	padding-top: .4rem;
 }
 
-#write .md-task-list-item > input[checked]::before {
-  content: '✓';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  color: var(--dark-trait);
-  font-size: 12px;
-  font-weight: 500;
+blockquote .md-end-block.md-heading {
+	color: inherit;
 }
 
-.md-image > .md-meta {
-  border-radius: var(--border-radius);
-  padding: 2px 0px 0px 4px;
-  font-size: 0.9em;
-  color: inherit;
+blockquote .md-end-block.md-heading:before {
+	content: '' !important;
 }
 
-.md-toc {
-  margin-top: 20px;
-  padding-bottom: 20px;
+blockquote {
+	margin: 0 0 1rem;
+	padding: 0 1rem;
+	border-left: .25rem solid #3b434b;
 }
 
-/* Source mode */
-.CodeMirror.cm-s-typora-default *,
-.cm-s-typora-default * {
-  background: inherit;
-  color: var(--text-color);
-  font-family: var(--monospace);
-  font-size: var(--font-size) !important;
-  font-style: normal;
-  font-weight: normal;
-}
-.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
-  border-left: 2px solid var(--light-trait-400);
+blockquote,
+blockquote p {
+	line-height: 1.5;
+	color: #8b949e;
 }
 
-.sidebar-tabs {
-  border-bottom: none;
+.MathJax_Display {
+	font-size: 1rem !important;
+	margin-top: .5rem;
+	margin-bottom: 0;
 }
 
-.outline-expander {
-  width: 1.5rem;
-  vertical-align: initial;
-}
-.outline-expander:before,
-.outline-expander:hover:before,
-.outline-item-open > .outline-item > .outline-expander:before,
-.outline-item-open > .outline-item > .outline-expander:hover:before {
-  content: "\f125";
-  transition: transform 125ms ease-in-out;
-}
-.outline-item-open > .outline-item > .outline-expander:hover:before,
-.outline-item-open > .outline-item > .outline-expander:before {
-  transform: rotate(90deg);
-}
-.outline-label:hover {
-  text-decoration: none;
+.md-math-block {
+	font-size: 1.4rem;
 }
 
-#toc-dropmenu {
-  background: var(--bg-color-dark);
-}
-#toc-dropmenu .outline-title {
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-.dropdown-menu .divider {
-  display: none;
+.md-rawblock-tooltip .md-rawblock-control {
+	background-color: var(--item-hover-bg-color);
 }
 
-.context-menu {
-  background-color: var(--bg-color-dark);
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+	font-size: 1.105rem;
+	background-color: var(--item-hover-bg-color);
 }
 
-.file-node-background {
-  height: 31px;
-}
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state {
-  visibility: visible;
-}
-.file-node-icon {
-  margin-right: 8px;
-}
-.file-library-node:not(.file-node-root):focus>.file-node-content {
-  outline: none;
+.md-rawblock-control .CodeMirror.cm-s-inner {
+	border: 0px;
 }
 
-/* New file animation */
-.blink-area {
-  animation: none;
+/* Inline Math Editing */
+.md-inline-math script {
+	color: #f9826c;
 }
 
-.file-list-item-summary {
-  font-size: var(--font-size);
-  font-family: var(--font-family);
+.md-math-tex inline-math-svg {
+	font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+	border: 0px;
+}
+
+.md-rawblock-input {
+	font-size: 1.105rem;
+}
+
+/* Mathjax edit panel*/
+.md-rawblock-before {
+	border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+	font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+	outline: none;
+	background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+	transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+	transition: 0.5s;
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+	transition: 0.5s;
+	visibility: visible;
+	opacity: 1;
+	animation: none;
+}
+
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+
+.md-image>.md-meta {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.md-image>img {
+	margin-top: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: var(--text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+	color: var(--text-color);
+	background-color: #484f58;
+}
+
+.md-image-pick-file-btn,
+.md-image-input-src-btn {
+	background-color: var(--item-hover-bg-color);
+}
+
+.md-image-btn.selected,
+.md-image-btn:hover,
+.md-image-pick-file-btn:hover,
+.md-image-input-src-btn:hover {
+	color: #f9826c !important;
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.searchpanel-search-option-btn {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid #30363d;
+}
+
+.searchpanel-search-option-btn.active {
+	color: #ddd;
+	border: 1px solid #8b949e;
+}
+
+.searchpanel-search-option-btn:hover {
+	border: 1px solid #8b949e;
+}
+
+#md-searchpanel {
+	border-bottom: 0 solid #324560;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
 }
 
 #md-searchpanel input {
-  border-radius: var(--border-radius);
-  box-shadow: none;
+	background-color: #21262d !important;
+	border: 1px solid #30363d;
 }
-#md-searchpanel input:focus {
-  box-shadow: none;
-  border-color: var(--meta-content-color);
+
+#md-searchpanel .btn {
+	font-size: 11px;
 }
-#md-searchpanel .search-type-selection {
-  width: auto;
+
+#md-searchpanel .btn:hover {
+	color: #8b949e;
 }
-#md-searchpanel .btn:not(.close-btn):hover {
-  box-shadow: none;
+
+#md-notification:before {
+	top: 13px;
+}
+
+#md-notification {
+	background: var(--bg-color);
+	font-size: 13px;
+	border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+	color: #f9826c;
+}
+
+#md-notification p,
+#md-notification .btn,
+#md-notification label {
+	font-size: 13px !important;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+	border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+.megamenu-opened header {
+	background-image: none;
+}
+
+.file-node-content .fa-caret-right,
+.file-node-content .fa-caret-down {
+	color: #f9826c;
+}
+
+.file-node-title {
+	color: var(--text-color);
+}
+
+.active-tab-files {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+	background-color: var(--item-hover-bg-color) !important;
+	border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+	border-bottom: 0;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+	background: var(--item-hover-bg-color) !important;
+}
+
+.file-node-open-state {
+	background-color: transparent !important;
 }
 
 .mac-seamless-mode #typora-sidebar {
-  background-color: var(--side-bar-bg-color);
+	background-color: var(--item-hover-bg-color);
+	border-right: 0 solid #090c12;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+titlebar {
+	background-color: var(--bg-color);
+}
+
+/* Sidebar header on Win/Linux (Files/Plan) */
+.info-panel-tab-title {
+}
+
+/* Plan should get the same sidebar background color on Win/Linux */
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+	background-color: var(--item-hover-bg-color)
+}
+
+/* Bottom border on Win/Linux Sidebar */
+.info-panel-tab-border {
+	background-color: #f9826c !important;
+}
+
+.sidebar-footer-item:hover {
+	background-color: inherit;
+}
+
+.sidebar-tab.active {
+	color: var(--text-color);
+	font-weight: 700;
+}
+
+.file-node-icon,
+.file-node-open-state {
+	color: #6E7681;
+}
+
+.fa-file-text-o:before {
+	color: var(--text-color) !important;
+}
+
+.md-lang {
+	color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+	--item-hover-bg-color: var(--bg-color);
+	color: #efb752;
+}
+
+hr {
+	background-color: #30363d;
+	border: 0 none;
+	box-sizing: content-box;
+	height: 0.25rem;
+	margin: 16px 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+input {
+	color: #82bed6;
+}
+
+#searchpanel-word-option-btn,
+#find-and-replace-icon-word,
+#find-and-replace-icon-case,
+.searchpanel-search-option-btn,
+.icon,
+.glyphicon .popover,
+.popover-title {
+	color: #82bed6 !important;
+	fill: #82bed6 !important;
 }
 
 #md-notification .btn {
-  border: 0;
+	border: 0;
+}
+
+.show-word-count #footer-word-count {
+	background: #000;
+}
+
+#recent-file-panel-action-btn {
+	background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+	border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+	background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+/* Code block */
+.cm-s-inner {
+	border: 1px solid #324560;
+	border-radius: 6px;
+	padding: 1.2rem 1rem;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+	color: #d2a8ff;
+}
+
+.cm-s-inner .cm-header {
+	color: #d2a8ff;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+	border: 0;
+	color: #6d8a88;
+}
+
+#typora-source .CodeMirror-gutter-wrapper {
+	font-size: 1rem;
+}
+
+/* Code block in Source Mode. If activated, borders are nicer but displayed funny when stacked
+#typora-source .cm-s-inner {
+border-radius: 6px;
+}
+*/
+
+.cm-s-inner .CodeMirror-cursor {
+	border-left: solid thin #f8f8f2 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+	color: #6d8a88;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+	background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner span.cm-comment {
+	color: #8b949e;
+	font-style: normal;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2,
+.cm-s-inner span.cm-quote {
+	color: #a5d6ff;
+}
+
+.cm-s-inner span.cm-number {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-variable-2 {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-def {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-operator {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-keyword {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-atom {
+	color: #8b949e;
+}
+
+.cm-s-inner span.cm-meta {
+	color: #8b949e;
+}
+
+.cm-s-inner span.cm-tag {
+	color: #7ee787;
+}
+
+.cm-s-inner span.cm-attribute {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-defined {
+	color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-qualifier {
+	color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+	color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-builtin {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable-3 {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-block-start {
+	color: #ffa657;
+}
+
+.cm-s-inner span.cm-type {
+	color: #ffb86c;
+}
+
+.cm-positive {
+	color: #aff5b4;
+	background-color: #033a16;
+}
+
+.cm-negative {
+	color: #aff5b4;
+	background-color: #67060c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+	color: var(--text-color) !important;
+	text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext,
+body::selection,
+body::-moz-selection {
+	background: var(--select-text-bg-color) !important;
+	background-color: var(--select-text-bg-color) !important;
+	color: var(--select-text-font-color) !important;
+	text-shadow: none;
+}
+
+#write ol,
+#write ul {
+	font-size: 1.25rem;
+	font-weight: 500;
+	padding-left: 2rem;
+}
+
+/* Code block inside lists */
+#write li .cm-s-inner {
+	font-size: 1.05rem;
+	font-weight: 500;
+	margin-bottom: -0.65rem;
+}
+
+/* Code block inside list with better margins, but it resizes borders and consider all as first-child :(
+#write li .cm-s-inner>:first-child {
+margin-top: 1.2rem;
+}
+
+#write li .cm-s-inner>:last-child {
+margin-bottom: 1.2rem;
+}		
+*/
+
+#write ol>li,
+#write ul>li {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+
+#write ul>li ul>li {
+	list-style-type: circle;
+	background-color: transparent;
+	font-weight: 500;
+}
+
+#write ul>li ul>li ul>li {
+	list-style-type: square;
+	font-weight: 500;
+}
+
+#write ol>li ol>li {
+	list-style-type: lower-roman;
+}
+
+#write ol>li ol>li ol>li {
+	list-style-type: lower-latin;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+	font-weight: 500;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+	font-weight: 500;
+	padding-left: 0.25rem;
+}
+
+#write ul {
+	font-weight: 500;
+	list-style-type: disc;
+}
+
+ul:first-child,
+ol:first-child {
+	font-weight: 500;
+	margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+	font-weight: 500;
+	margin-top: 0;
+}
+
+sup.md-footnote {
+	background-color: rgba(56, 139, 253, 0.1);
+	color: #58a6ff;
+	font-weight: 700;
+	font-size: 75%;
+	font-style: normal;
+}
+
+sup.md-footnote a {
+	font-style: normal;
+}
+
+sup.md-footnote:hover {
+	background-color: rgba(56, 139, 253, 0.15);
+}
+
+sup.md-footnote .md-meta {
+	color: #58a6ff;
+}
+
+.md-def-footnote .md-def-name:before,
+.md-def-footnote .md-def-name:after {
+	content: '';
+}
+
+.md-def-footnote .md-def-name {
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background-color: rgba(56, 139, 253, 0.1);
+	color: #58a6ff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.footnotes {
+	opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+	font-size: 15px;
+}
+
+a.reversefootnote {
+	color: #f9826c;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+mark {
+	background-color: #2ea44f;
+	border-radius: 6px;
+	color: white;
+	line-height: 2;
+	padding: 5px 10px;
+	white-space: nowrap;
+}
+
+.cm-s-typora-default {
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+	color: var(--text-color);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+	color: #8b949e;
+}
+
+.cm-s-typora-default .cm-string {
+	color: #a5d6ff;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+	color: #8b949e;
+	font-style: italic;
+}
+
+.cm-s-typora-default .cm-link,
+.cm-s-typora-default .cm-tag {
+	color: rgb(165, 214, 255);
+}
+
+.cm-s-typora-default .cm-string {
+	color: #f0b752;
+}
+
+.cm-s-typora-default pre.cm-s-inner {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+	color: var(--text-color);
+	font-size: 0.9rem;
+}
+
+.cm-s-typora-default .cm-atom {
+	color: #8b949e;
+}
+
+.CodeMirror-activeline .cm-atom {
+	color: var(--text-color) !important;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+	background: #484f58;
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+	font-size: 0.9rem !important;
+}
+
+/* Mega menu */
+.megamenu-content,
+.megamenu-opened header {
+	background: var(--bg-color1);
+}
+
+.megamenu-content {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.megamenu-menu-list {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.megamenu-opened .megamenu-content {
+	visibility: visible;
+	opacity: 1;
+	animation: none;
+	background-color: inherit;
+}
+
+/* Mega menu sidebar */
+.megamenu-menu {
+	background-color: var(--item-hover-bg-color);
+}
+
+/* Return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+	border: 0px;
+}
+
+/* Remove divider in mega menu */
+.megamenu-menu-header {}
+
+/* Return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: var(--text-color);
+}
+
+.megamenu-menu-list li a:hover,
+.megamenu-menu-list li a.active {
+	background-color: var(--bg-color);
+}
+
+/* Return button hover in mega menu */
+.megamenu-menu-header:hover {}
+
+/* Return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {}
+
+/* Long button in mega menu */
+.long-btn {
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+	margin-bottom: 10px;
+	margin-left: 10px;
+	background-color: var(--item-hover-bg-color);
+}
+
+.long-btn:hover {
+	background-color: var(--item-hover-bg-color);
+	border-color: 1px solid #8b949e;
+	color: var(--text-color) !important;
+}
+
+
+#recent-file-panel-action-btn {
+	background-color: var(--item-hover-bg-color);
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText,
+.pieTitleText {
+	fill: var(--mermaid-contrast-color);
+	font-size: 2rem;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 300;
+}
+
+/* Node text */
+.grid .tick text,
+.taskText,
+text.actor,
+.node .label,
+.taskTextOutsideRight,
+.taskTextOutsideLeft,
+.labelText,
+.loopText,
+g.classGroup text {
+	color: var(--text-color);
+	fill: var(--text-color);
+	stroke: black;
+	stroke-width: 0.05px;
+	
+	.title {
+		font-weight: 600;
+	}
+}
+
+/* Node color */
+.actor,
+.task,
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+g.classGroup rect,
+.labelBox {
+	fill: var(--mermaid-node-color);
+	stroke: var(--mermaid-node-border);
+	color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+	color: black;
+	background-color: var(--primary-color);
+	stroke: var(--primary-btn-border-color);
+	stroke-width: 1px;
+	height: 20px;
+	text-align: center;
+}
+
+.note {
+	fill: var(--primary-color);
+	stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+	color: black;
+}
+
+.noteText>tspan {
+	fill: #333 !important;
+	color: #333 !important;
+}
+
+.taskText {
+	fill: white !important;
+}
+
+/* Class diagram specific */
+g.classGroup line {
+	stroke: var(--text-color);
+}
+
+.classLabel .box {
+	stroke: none;
+	stroke-width: 0;
+	fill: var(--primary-color);
+	opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition,
+svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency,
+svg[id^="mermaidChart"] .relation {
+	stroke: var(--text-color);
+}
+
+.classLabel .label {
+	fill: black;
+}
+
+#extensionStart,
+#extensionEnd,
+#compositionStart,
+#compositionEnd,
+#aggregationStart,
+#aggregationEnd,
+#dependencyStart,
+#dependencyEnd {
+	fill: var(--text-color);
+	stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+	stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+	stroke: var(--text-color);
+}
+
+text.slice {
+	fill: var(--text-color);
+}
+
+.legend text {
+	fill: var(--text-color);
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+	fill: var(--text-color) !important;
+	stroke: var(--text-color) !important;
+}
+
+/* End mermaid */
+
+/* Tip when hover on a button */
+#ty-tooltip {
+	background-color: black;
+	color: white;
+}
+
+/* Header in setting */
+.window-header {}
+
+/* Sidebar in setting */
+.sidebar {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.list-group-content {
+	margin-left: 10px !important;
+}
+
+/* Sidebar button in setting menu */
+.nav-group-item {
+	color: var(--text-color) !important;
+	border-top-left-radius: 6px !important;
+	border-bottom-left-radius: 6px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+/* Sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+	background-color: #0d1117 !important;
+	color: var(--text-color) !important;
+}
+
+/* The indent example in setting.editor */
+div.pane>div:nth-child(4)>div:nth-child(2) .label-input-group td:last-child div {
+	border: 1px solid #30363d !important;
+	border-radius: 6px;
+	background-color: var(--color-border-secondary);
+	margin: 10px !important;
+}
+
+/* Button in setting menu */
+.ty-preferences button.btn-default {
+	border: 1px solid #30363d;
+	background-color: var(--color-border-secondary);
+	border-radius: 6px;
+}
+
+/* Button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+	border-color: #8b949e !important;
+	background-color: var(--color-border-secondary) !important;
+}
+
+/* Return button in setting menu */
+.window-header button:hover {
+	color: var(--text-color) !important;
+}
+
+/* Search input in setting menu */
+.search-input {
+	border: 1px solid #30363d;
+	border-top-left-radius: 6px !important;
+	border-bottom-left-radius: 6px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	margin-left: 10px !important;
+}
+
+.search-input:hover {
+	border: 1px solid #8b949e;
+}
+
+.search-input:focus {
+	border: none !important;
+}
+
+/* Select item (mostly in setting menu) */
+select {
+	border: 1px solid #30363d;
+	border-radius: 6px;
+	background-color: var(--color-border-secondary) !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+/* Enabled select item hover */
+select:not([disabled]):hover {
+	color: var(--text-color);
+	opacity: 1;
+	border: 1px solid #8b949e;
+}
+
+/* Disabled select item hover */
+select[disabled]:hover {
+	opacity: 0.5;
+	border: 1px solid #8b949e;
+}
+
+/* Radio */
+input[type="radio"] {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 0px !important;
+}
+
+input[type="radio"]:before {
+	content: "";
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #30363d;
+	border-radius: 0.55rem;
+	background-color: var(--item-hover-bg-color) !important;
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+	content: "\25CF";
+	font-size: 1rem;
+	line-height: 1rem;
+	color: var(--text-color);
+}
+
+/* Radio checked */
+input[type="radio"]:checked:before {
+	content: "\25CF";
+	font-size: 1rem;
+	line-height: 1rem;
+	color: var(--text-color);
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+/* Remove up and down button from number type input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+}
+
+input {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkbox */
+input[type="checkbox"]:before {
+	content: "";
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #30363d;
+	border-radius: 3px;
+	background-color: var(--item-hover-bg-color);
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+/* Checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: var(--text-color);
+}
+
+/* Checkbox checked */
+input[type="checkbox"]:checked:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: var(--text-color);
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+#write input[type="checkbox"]:before,
+#write input[type="checkbox"]:checked:before {
+	margin-top: -0.9rem;
+}
+
+/* Checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: white;
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+/* Using checkboxes in sublists should not get list circles inside inputs */
+.md-task-list-item {
+	list-style-type: none !important;
+}
+
+/* Input number in settings for Win/Linux */
+input:not([type="range"]):not([type="color"]) {
+	border: 1px solid #30363d !important;
+	border-radius: 3px;
+	background-color: var(--item-hover-bg-color);
+}
+
+.pane-sm input[type="search"] {
+	border: 1px solid #30363d !important;
+}
+
+/* Search in settings */
+#file-library-search-input:hover {
+	border: 1px solid #8b949e !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+	border-radius: 10px;
+	background-color: #2F333A;
+}
+
+/* Remove dashed border on filenames in the sidebar */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+	outline: 0 !important;
+}
+
+/* Handle long filenames in sidebar */
+file-node-title-name-part {
+	white-space: pre-wrap;
+}
+
+/* Custom syntax highlighting */
+div.cm-s-inner[lang="css"] .cm-qualifier {
+	color: #a5d6ff !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-tag {
+	color: #7ee787 !important;
+}
+
+div.cm-s-inner[lang="diff"] .cm-meta {
+	color: #d2a8ff !important;
+	font-weight: 700;
+}
+
+div.cm-s-inner[lang="diff"] .cm-negative {
+	color: #d2a8ff !important;
+	font-weight: 700;
+}
+
+div.cm-s-inner[lang="dockerfile"] .cm-variable-2 {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="erlang"] .cm-tag {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="fsharp"] .cm-variable {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="go"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="http"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="java"] .cm-def {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="javascript"] .cm-def {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="less"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="kotlin"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="markdown"] .cm-comment.cm-variable-2 {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-meta {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-variable-2 {
+	color: #8b949e !important;
+}
+
+div.cm-s-inner[lang="php"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="python"] .cm-property {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-variable-3 {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-variable-2 {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-tag {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-error {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="ruby"] .cm-atom {
+	color: #d2a8ff !important;
 }
 
 
@@ -857,6 +2133,6 @@ code {
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''><h1><a name="klock-plus" class="md-header-anchor"></a><span>Klock Plus</span></h1><p><img src="./assets/kb_main.png" style="width: 100%; max-width: 720px; display: block; margin: 12px auto;"/></p><p><span>Klock Plus 是一个时钟App展示工具，可以运行在PC / CASIO fx-9860 / WinCE等平台上。</span></p><p><span>并且可以在PC上构建用户自定义的表盘。</span></p><p><span>此项目按照 BSD 协议开源。</span></p><h2><a name="下载" class="md-header-anchor"></a><span>下载</span></h2><p><span>在这里</span><a href='https://github.com/anderain/KlockPlus/releases'><span>下载当前版本的 KlockPlus</span></a><span>。包含可执行文件与构建好的样例表盘。</span></p><h2><a name="安装" class="md-header-anchor"></a><span>安装</span></h2><h3><a name="在fx-9860系列上安装" class="md-header-anchor"></a><span>在fx-9860系列上安装</span></h3><p><span>将</span><code>KLOCKP.G1A</code><span>安装在 Flash Mem，并将需要展示的表盘文件 </span><code>*.kwf</code><span> 放置在 Flash Mem 或者 SD Card，启动程序即可展示。</span></p><h3><a name="在-windows-ce-上安装" class="md-header-anchor"></a><span>在 Windows CE 上安装</span></h3><p><code>TODO</code></p><h2><a name="制作自定义表盘" class="md-header-anchor"></a><span>制作自定义表盘</span></h2><p><span>用户可以自己编写 </span><code>KBasic Script</code><span>并且使用</span><code>KlockPlus Builder</code><span>来构建</span><code>KWF</code><span>格式的表盘。</span></p><h3><a name="关于-kbasic" class="md-header-anchor"></a><span>关于 KBasic</span></h3><p><span>KBasic 是一种表达绘制流程的简单脚本语言，使用Builder构建，编译为KRT字节码（一个简单的基于堆栈的虚拟机）。</span></p><p><span>表盘 App 加载后，会后循环执行KBasic的代码，并且传入时、分、秒、毫秒等信息来执行绘制表盘，绘制的速度大约是 12 FPS。</span></p><h3><a name="样例" class="md-header-anchor"></a><span>样例</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印一句提示语</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(0, 0, "Basic Clock", 1)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 拼接字符串，格式化时分秒</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">let str_time = zeropad(hh, 2) &amp; ":" &amp; zeropad(mm, 2) &amp; ":" &amp; zeropad(ss, 2)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印时间字符串</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(8, 12, str_time, 0)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="display: none; height: 160px;"></div></div></div></pre><p><span>更多的样例请参考 </span><code>samples/</code><span>文件夹下的</span><code>kbs</code><span>文件。</span></p><h3><a name="构建表盘的二进制文件" class="md-header-anchor"></a><span>构建表盘的二进制文件</span></h3><ol start='' ><li><p><span>假设上面的样例保存为文件 </span><code>sample0-basic.kbs</code><span>。</span></p></li><li><p><span>在命令行输入下面的命令来构建</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入脚本文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -o 输出二进制文件名</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder build -i sample0-basic.kbs -o sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 80px;"></div><div class="CodeMirror-gutters" style="display: none; height: 80px;"></div></div></div></pre></li><li><p><span>输入以下的命令来预览</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入二进制文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder preview -i sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 60px;"></div><div class="CodeMirror-gutters" style="display: none; height: 60px;"></div></div></div></pre><p><span>当然，也可以选择直接双击 </span><code>klockbuilder.exe</code><span>，会弹出选择文件的对话框，选择文件来预览。</span></p></li></ol><p><img src="./assets/tutorial-0-preview.png" referrerpolicy="no-referrer" alt="tutorial-0-preview"></p><p><span>KBasic 有五种指令：</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>指令</span></th><th><span>样例</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>image 指令</span></td><td><code>image &quot;bitmap_file_name.bmp&quot;</code></td><td><span>加载 bmp 格式的图片</span></td><td><span>只接受色深为 24bit 的 bmp</span></td></tr><tr><td><span>2</span></td><td><span>let 指令</span></td><td><code>let var_name = expr</code></td><td><span>将 expr 的计算结果赋值给变量 var_name</span></td><td><span>请注意，如果没有let在行首，会被理解为使用=（等于）操作符的表达式，并不会报错</span></td></tr><tr><td><span>3</span></td><td><span>标签指令</span></td><td><code>label_name:</code></td><td><span>跳转标签</span></td><td>&nbsp;</td></tr><tr><td><span>4</span></td><td><span>goto 指令</span></td><td><code>goto label_name</code></td><td><span>无条件跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>5</span></td><td><span>if 指令</span></td><td><code>if expr goto label_name</code></td><td><span>expr 计算结果不为0时跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>6</span></td><td><span>表达式</span></td><td><code>zeropad(hh, 2) &amp; &quot;:&quot; &amp; zeropad(mm, 2)</code><span> </span><br><code>1+2/sin(ms)</code></td><td><span>可以计算的表达式</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3><a name="预定义变量" class="md-header-anchor"></a><span>预定义变量</span></h3><figure><table><thead><tr><th><span>变量名</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><code>hh</code></td><td><span>当前时间的小时</span></td><td>&nbsp;</td></tr><tr><td><code>mm</code></td><td><span>当前时间的的分钟</span></td><td>&nbsp;</td></tr><tr><td><code>ss</code></td><td><span>当前时间的秒</span></td><td>&nbsp;</td></tr><tr><td><code>ms</code></td><td><span>当前时间的毫秒</span></td><td><span>受到 fx-9860 RTC 功能的限制，毫秒的精度是基于1/128秒的，需要注意。</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3><a name="表达式" class="md-header-anchor"></a><span>表达式</span></h3><p><span>表达式可以有两种值，字符串 </span><code>RVT_STRING</code><span> 与 数值</span><code>RVT_NUMBER</code></p><h3><a name="表达式的操作符" class="md-header-anchor"></a><span>表达式的操作符</span></h3><figure><table><thead><tr><th><span>优先级</span></th><th><span>操作符</span></th><th><span>功能</span></th><th><span>样例</span></th></tr></thead><tbody><tr><td><span>500</span></td><td><span>-</span></td><td><span>取负数</span></td><td><code>-a</code><span> </span><br><code>-1.5</code></td></tr><tr><td><span>200</span></td><td><span>*</span></td><td><span>乘法</span></td><td><code>a * b</code></td></tr><tr><td><span>200</span></td><td><span>/</span></td><td><span>除法</span></td><td><code>a / b</code></td></tr><tr><td><span>200</span></td><td><span>%</span></td><td><span>取模</span></td><td><code>a % b</code></td></tr><tr><td><span>200</span></td><td><span>\</span></td><td><span>整数除法</span></td><td><code>a \ b</code></td></tr><tr><td><span>100</span></td><td><span>+</span></td><td><span>加法</span></td><td><code>a + b</code></td></tr><tr><td><span>100</span></td><td><span>-</span></td><td><span>减法</span></td><td><code>a - b</code></td></tr><tr><td><span>90</span></td><td><span>&amp;</span></td><td><span>字符串连接</span></td><td><code>&quot;hello &quot; &amp; &quot;world &amp; 2&quot;</code></td></tr><tr><td><span>60</span></td><td><span>&gt;</span></td><td><span>大于</span></td><td><code>a &gt; b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;</span></td><td><span>小于</span></td><td><code>a &lt; b</code></td></tr><tr><td><span>60</span></td><td><span>&gt;=</span></td><td><span>大于等于</span></td><td><code>a &gt;= b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;=</span></td><td><span>小于等于</span></td><td><code>a &lt;= b</code></td></tr><tr><td><span>50</span></td><td><span>=</span></td><td><span>等于</span></td><td><code>a = b</code></td></tr><tr><td><span>50</span></td><td><span>&lt;&gt;</span></td><td><span>不等于</span></td><td><code>a &lt;&gt; b</code></td></tr><tr><td><span>50</span></td><td><span>!</span></td><td><span>逻辑非</span></td><td><code>!a</code></td></tr><tr><td><span>40</span></td><td><span>&amp;&amp;</span></td><td><span>逻辑与</span></td><td><code>a &amp;&amp; b</code></td></tr><tr><td><span>30</span></td><td><span>|</span><span>|</span></td><td><span>逻辑或</span></td><td><code>a || b</code></td></tr></tbody></table></figure><h3><a name="表达式支持的内建函数" class="md-header-anchor"></a><span>表达式支持的内建函数</span></h3><figure><table><thead><tr><th><span>函数标号</span></th><th><span>函数声明</span></th><th><span>返回值</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>0</span></td><td><span>sin(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正弦</span></td></tr><tr><td><span>1</span></td><td><span>cos(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>余弦</span></td></tr><tr><td><span>2</span></td><td><span>tan(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正切</span></td></tr><tr><td><span>3</span></td><td><span>sqrt(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>平方根</span></td></tr><tr><td><span>4</span></td><td><span>exp(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>指数</span></td></tr><tr><td><span>5</span></td><td><span>abs(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>e为底的指数函数</span></td></tr><tr><td><span>6</span></td><td><span>log(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>对数</span></td></tr><tr><td><span>7</span></td><td><span>rand()</span></td><td><code>RVT_NUMBER</code></td><td><span>范围在区间</span><code>[0, 1)</code><span>的随机数</span></td></tr><tr><td><span>8</span></td><td><span>clr()</span></td><td><code>RVT_NUMBER</code></td><td><span>清除屏幕内容。总是返回 0</span></td></tr><tr><td><span>9</span></td><td><span>zeropad(num, digits)</span></td><td><code>RVT_STRING</code></td><td><span>将数值转化为字符串，长度不足的时候在前方补充0</span></td></tr><tr><td><span>10</span></td><td><span>printmini(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸4x6。总是返回 0</span></td></tr><tr><td><span>11</span></td><td><span>print(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸6x8。总是返回 0</span></td></tr><tr><td><span>12</span></td><td><span>gprint(x, y, str, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>将指定的图片当做包含字符</span><code>:</code><span>与字符</span><code>0-9</code><span>的字体，打印字符串</span><br><span>总是返回 0</span></td></tr><tr><td><span>13</span></td><td><span>line(x0, y0, x1, y1, dot)</span></td><td><code>RVT_NUMBER</code></td><td><span>画线，dot为1是黑色，dot为0时白色。总是返回 0</span></td></tr><tr><td><span>14</span></td><td><span>blt(x, y, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>在指定位置绘制图片。总是返回 0</span></td></tr><tr><td><span>15</span></td><td><span>p(expr)</span></td><td><code>RVT_NUMBER</code></td><td><span>在控制台输出参数的内容，只在pc上有效。总是返回 0</span></td></tr></tbody></table></figure><h2><a name="还有什么" class="md-header-anchor"></a><span>还有什么</span></h2><p><span>我为fx-9860GII设计了可以3D打印的表带：</span></p><p><img src="./assets/watch-strap.jpg" referrerpolicy="no-referrer" alt="watch-strap"></p><p><span>可以真的把fx-9860当做手表戴在手腕上，稍后你可以在Thingiverse上找到它。</span></p><h2><a name="其他" class="md-header-anchor"></a><span>其他</span></h2><p><span>此项目的 </span><code>KlockPlus Builder</code><span> 使用了 </span><a href='https://www.libsdl.org/'><span>SDL</span></a><span>，并在分发时附带了 </span><code>SDL.dll</code><span>。如果想要自己修改、构建 </span><code>KlockPlus Builder</code><span>，需要在你的工具链中安装</span><code>SDL 1.2</code><span>。</span></p><p><span>此项目的字体使用了 </span><a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?portfolio_6x8'><span>Portfolio 6x8</span></a><span> 与 </span><a href='https://robey.lag.net/2010/01/23/tiny-monospace-font.html'><span>Tom Thumb 4x6</span></a><span>。</span></p><p><span>此项目的吉祥物：狗大哈 · Husky The Big。</span><a href='https://weibo.com/goudaha'><span>记得谢谢狗大哈</span></a><span>！</span></p></div>
+<div id='write'  class=''><h1><a name="klock-plus" class="md-header-anchor"></a><span>Klock Plus</span></h1><p><img src="./assets/kb_main.png" style="width: 100%; max-width: 720px; display: block; margin: 12px auto;"/></p><p><span>Klock Plus 是一个时钟App展示工具，可以运行在PC / CASIO fx-9860 / WinCE等平台上。</span></p><p><span>并且可以在PC上构建用户自定义的表盘。</span></p><p><span>此项目按照 BSD 协议开源。</span></p><h2><a name="下载" class="md-header-anchor"></a><span>下载</span></h2><p><span>在这里</span><a href='https://github.com/anderain/KlockPlus/releases'><span>下载当前版本的 KlockPlus</span></a><span>。包含可执行文件与构建好的样例表盘。</span></p><h2><a name="安装" class="md-header-anchor"></a><span>安装</span></h2><h3><a name="1-在fx-9860系列上安装" class="md-header-anchor"></a><span>1. 在fx-9860系列上安装</span></h3><p><span>将</span><code>KLOCKP.G1A</code><span>安装在 Flash Mem，并将需要展示的表盘文件 </span><code>*.kwf</code><span> 放置在 Flash Mem 或者 SD Card，启动程序即可展示。</span></p><h3><a name="2-在-windows-ce-上安装" class="md-header-anchor"></a><span>2. 在 Windows CE 上安装</span></h3><h4><a name="21-windows-ce10--ce101" class="md-header-anchor"></a><span>2.1 Windows CE1.0 &amp; CE1.01</span></h4><p><span>因为CE.1x并不支持 </span><code>GetModuleFileName</code><span> API。所以需要把所有KWF文件放在根目录下。在其他地方运行</span><code>KlockP</code><span>开头的exe即可。</span></p><h4><a name="22-windows-ce-2x" class="md-header-anchor"></a><span>2.2 Windows CE 2.x</span></h4><p><span>在CE2.x下把exe与KWF文件放在同个目录下即可。</span></p><h4><a name="23-更高版本" class="md-header-anchor"></a><span>2.3 更高版本</span></h4><p><span>可以启动，但是文件不能被正确列出，请按照CE1.x的情况把KWF文件放在系统根目录下。</span></p><p><img src="./assets/showcase2.webp" referrerpolicy="no-referrer" alt="showcase2"></p><h2><a name="制作自定义表盘" class="md-header-anchor"></a><span>制作自定义表盘</span></h2><p><span>用户可以自己编写 </span><code>KBasic Script</code><span>并且使用</span><code>KlockPlus Builder</code><span>来构建</span><code>KWF</code><span>格式的表盘。</span></p><h3><a name="关于-kbasic" class="md-header-anchor"></a><span>关于 KBasic</span></h3><p><span>KBasic 是一种表达绘制流程的简单脚本语言，使用Builder构建，编译为KRT字节码（一个简单的基于堆栈的虚拟机）。</span></p><p><span>表盘 App 加载后，会后循环执行KBasic的代码，并且传入时、分、秒、毫秒等信息来执行绘制表盘，绘制的速度大约是 12 FPS。</span></p><h3><a name="样例" class="md-header-anchor"></a><span>样例</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 16.5972px; left: 18px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印一句提示语</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(0, 0, "Basic Clock", 1)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 拼接字符串，格式化时分秒</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">let str_time = zeropad(hh, 2) &amp; ":" &amp; zeropad(mm, 2) &amp; ":" &amp; zeropad(ss, 2)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># 打印时间字符串</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">print(8, 12, str_time, 0)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 171px;"></div><div class="CodeMirror-gutters" style="display: none; height: 171px;"></div></div></div></pre><p><span>更多的样例请参考 </span><code>samples/</code><span>文件夹下的</span><code>kbs</code><span>文件。</span></p><h3><a name="构建表盘的二进制文件" class="md-header-anchor"></a><span>构建表盘的二进制文件</span></h3><ol start='' ><li><p><span>假设上面的样例保存为文件 </span><code>sample0-basic.kbs</code><span>。</span></p></li><li><p><span>在命令行输入下面的命令来构建</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 16.5973px; left: 18px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入脚本文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -o 输出二进制文件名</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder build -i sample0-basic.kbs -o sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 82px;"></div><div class="CodeMirror-gutters" style="display: none; height: 82px;"></div></div></div></pre></li><li><p><span>输入以下的命令来预览</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 16.5973px; left: 18px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -i 输入二进制文件名字</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"># -d 可选选项，附加之后会打印调试信息</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">klockbuilder preview -i sample0.kwf</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 61px;"></div><div class="CodeMirror-gutters" style="display: none; height: 61px;"></div></div></div></pre><p><span>当然，也可以选择直接双击 </span><code>klockbuilder.exe</code><span>，会弹出选择文件的对话框，选择文件来预览。</span></p></li></ol><p><img src="./assets/tutorial-0-preview.png" referrerpolicy="no-referrer" alt="tutorial-0-preview"></p><p><span>KBasic 有五种指令：</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>指令</span></th><th><span>样例</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>image 指令</span></td><td><code>image &quot;bitmap_file_name.bmp&quot;</code></td><td><span>加载 bmp 格式的图片</span></td><td><span>只接受色深为 24bit 的 bmp</span></td></tr><tr><td><span>2</span></td><td><span>let 指令</span></td><td><code>let var_name = expr</code></td><td><span>将 expr 的计算结果赋值给变量 var_name</span></td><td><span>请注意，如果没有let在行首，会被理解为使用=（等于）操作符的表达式，并不会报错</span></td></tr><tr><td><span>3</span></td><td><span>标签指令</span></td><td><code>label_name:</code></td><td><span>跳转标签</span></td><td>&nbsp;</td></tr><tr><td><span>4</span></td><td><span>goto 指令</span></td><td><code>goto label_name</code></td><td><span>无条件跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>5</span></td><td><span>if 指令</span></td><td><code>if expr goto label_name</code></td><td><span>expr 计算结果不为0时跳转到指定标签</span></td><td>&nbsp;</td></tr><tr><td><span>6</span></td><td><span>表达式</span></td><td><code>zeropad(hh, 2) &amp; &quot;:&quot; &amp; zeropad(mm, 2)</code><span> </span><br><code>1+2/sin(ms)</code></td><td><span>可以计算的表达式</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3><a name="预定义变量" class="md-header-anchor"></a><span>预定义变量</span></h3><figure><table><thead><tr><th><span>变量名</span></th><th><span>功能</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><code>hh</code></td><td><span>当前时间的小时</span></td><td>&nbsp;</td></tr><tr><td><code>mm</code></td><td><span>当前时间的的分钟</span></td><td>&nbsp;</td></tr><tr><td><code>ss</code></td><td><span>当前时间的秒</span></td><td>&nbsp;</td></tr><tr><td><code>ms</code></td><td><span>当前时间的毫秒</span></td><td><span>受到 fx-9860 RTC 功能的限制，毫秒的精度是基于1/128秒的，需要注意。</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3><a name="表达式" class="md-header-anchor"></a><span>表达式</span></h3><p><span>表达式可以有两种值，字符串 </span><code>RVT_STRING</code><span> 与 数值</span><code>RVT_NUMBER</code></p><h3><a name="表达式的操作符" class="md-header-anchor"></a><span>表达式的操作符</span></h3><figure><table><thead><tr><th><span>优先级</span></th><th><span>操作符</span></th><th><span>功能</span></th><th><span>样例</span></th></tr></thead><tbody><tr><td><span>500</span></td><td><span>-</span></td><td><span>取负数</span></td><td><code>-a</code><span> </span><br><code>-1.5</code></td></tr><tr><td><span>200</span></td><td><span>*</span></td><td><span>乘法</span></td><td><code>a * b</code></td></tr><tr><td><span>200</span></td><td><span>/</span></td><td><span>除法</span></td><td><code>a / b</code></td></tr><tr><td><span>200</span></td><td><span>%</span></td><td><span>取模</span></td><td><code>a % b</code></td></tr><tr><td><span>200</span></td><td><span>\</span></td><td><span>整数除法</span></td><td><code>a \ b</code></td></tr><tr><td><span>100</span></td><td><span>+</span></td><td><span>加法</span></td><td><code>a + b</code></td></tr><tr><td><span>100</span></td><td><span>-</span></td><td><span>减法</span></td><td><code>a - b</code></td></tr><tr><td><span>90</span></td><td><span>&amp;</span></td><td><span>字符串连接</span></td><td><code>&quot;hello &quot; &amp; &quot;world &amp; 2&quot;</code></td></tr><tr><td><span>60</span></td><td><span>&gt;</span></td><td><span>大于</span></td><td><code>a &gt; b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;</span></td><td><span>小于</span></td><td><code>a &lt; b</code></td></tr><tr><td><span>60</span></td><td><span>&gt;=</span></td><td><span>大于等于</span></td><td><code>a &gt;= b</code></td></tr><tr><td><span>60</span></td><td><span>&lt;=</span></td><td><span>小于等于</span></td><td><code>a &lt;= b</code></td></tr><tr><td><span>50</span></td><td><span>=</span></td><td><span>等于</span></td><td><code>a = b</code></td></tr><tr><td><span>50</span></td><td><span>&lt;&gt;</span></td><td><span>不等于</span></td><td><code>a &lt;&gt; b</code></td></tr><tr><td><span>50</span></td><td><span>!</span></td><td><span>逻辑非</span></td><td><code>!a</code></td></tr><tr><td><span>40</span></td><td><span>&amp;&amp;</span></td><td><span>逻辑与</span></td><td><code>a &amp;&amp; b</code></td></tr><tr><td><span>30</span></td><td><span>|</span><span>|</span></td><td><span>逻辑或</span></td><td><code>a || b</code></td></tr></tbody></table></figure><h3><a name="表达式支持的内建函数" class="md-header-anchor"></a><span>表达式支持的内建函数</span></h3><figure><table><thead><tr><th><span>函数标号</span></th><th><span>函数声明</span></th><th><span>返回值</span></th><th><span>附注</span></th></tr></thead><tbody><tr><td><span>0</span></td><td><span>sin(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正弦</span></td></tr><tr><td><span>1</span></td><td><span>cos(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>余弦</span></td></tr><tr><td><span>2</span></td><td><span>tan(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>正切</span></td></tr><tr><td><span>3</span></td><td><span>sqrt(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>平方根</span></td></tr><tr><td><span>4</span></td><td><span>exp(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>指数</span></td></tr><tr><td><span>5</span></td><td><span>abs(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>e为底的指数函数</span></td></tr><tr><td><span>6</span></td><td><span>log(a)</span></td><td><code>RVT_NUMBER</code></td><td><span>对数</span></td></tr><tr><td><span>7</span></td><td><span>rand()</span></td><td><code>RVT_NUMBER</code></td><td><span>范围在区间</span><code>[0, 1)</code><span>的随机数</span></td></tr><tr><td><span>8</span></td><td><span>clr()</span></td><td><code>RVT_NUMBER</code></td><td><span>清除屏幕内容。总是返回 0</span></td></tr><tr><td><span>9</span></td><td><span>zeropad(num, digits)</span></td><td><code>RVT_STRING</code></td><td><span>将数值转化为字符串，长度不足的时候在前方补充0</span></td></tr><tr><td><span>10</span></td><td><span>printmini(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸4x6。总是返回 0</span></td></tr><tr><td><span>11</span></td><td><span>print(x, y, str, rev)</span></td><td><code>RVT_NUMBER</code></td><td><span>打印字符串，字体尺寸6x8。总是返回 0</span></td></tr><tr><td><span>12</span></td><td><span>gprint(x, y, str, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>将指定的图片当做包含字符</span><code>:</code><span>与字符</span><code>0-9</code><span>的字体，打印字符串</span><br><span>总是返回 0</span></td></tr><tr><td><span>13</span></td><td><span>line(x0, y0, x1, y1, dot)</span></td><td><code>RVT_NUMBER</code></td><td><span>画线，dot为1是黑色，dot为0时白色。总是返回 0</span></td></tr><tr><td><span>14</span></td><td><span>blt(x, y, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>在指定位置绘制图片。总是返回 0</span></td></tr><tr><td><span>15</span></td><td><span>p(expr)</span></td><td><code>RVT_NUMBER</code></td><td><span>在控制台输出参数的内容，只在pc上有效。总是返回 0</span></td></tr><tr><td><span>16</span></td><td><span>gprintv(x, y, str, image_index)</span></td><td><code>RVT_NUMBER</code></td><td><span>与</span><code>gprint</code><span>功能相同，但是打印方向是竖向。 </span><br><span>总是返回 0</span></td></tr></tbody></table></figure><h2><a name="还有什么" class="md-header-anchor"></a><span>还有什么</span></h2><p><span>我为fx-9860GII设计了可以3D打印的表带：</span></p><p><img src="./assets/watch-strap.jpg" referrerpolicy="no-referrer" alt="watch-strap"></p><p><span>可以真的把fx-9860当做手表戴在手腕上，稍后你可以在Thingiverse上找到它。</span></p><h2><a name="其他" class="md-header-anchor"></a><span>其他</span></h2><p><span>此项目的 </span><code>KlockPlus Builder</code><span> 使用了 </span><a href='https://www.libsdl.org/'><span>SDL</span></a><span>，并在分发时附带了 </span><code>SDL.dll</code><span>。如果想要自己修改、构建 </span><code>KlockPlus Builder</code><span>，需要在你的工具链中安装</span><code>SDL 1.2</code><span>。</span></p><p><span>此项目的字体使用了 </span><a href='https://int10h.org/oldschool-pc-fonts/fontlist/font?portfolio_6x8'><span>Portfolio 6x8</span></a><span> 与 </span><a href='https://robey.lag.net/2010/01/23/tiny-monospace-font.html'><span>Tom Thumb 4x6</span></a><span>。</span></p><p><span>此项目的吉祥物：狗大哈 · Husky The Big。</span><a href='https://weibo.com/goudaha'><span>记得谢谢狗大哈</span></a><span>！</span></p></div>
 </body>
 </html>

@@ -1,4 +1,7 @@
-#include <stdio.h>
+#ifdef VER_PLATFORM_WIN32_CE
+#   include <stdio.h>
+#   define printf //
+#endif
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -792,8 +795,8 @@ int machine_exec_call_built_in (int func_index, kb_machine_t* machine, kb_runtim
             kb_rt_value *popped = (kb_rt_value *)vl_pop_back(machine->stack);
             char *sz = rtvalue_stringify(popped);
             rtvalue_destroy(popped);
-            // disable "p" on fx9860
-#ifndef fx9860
+            // disable "p" on fx9860 and wince
+#if defined(fx9860) || defined(VER_PLATFORM_WIN32_CE)
             printf("%s\n", sz);
 #endif
             free(sz);

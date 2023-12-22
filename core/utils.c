@@ -177,7 +177,7 @@ long k_atoi(const char* S)
 }
 
 /* A utility function to reverse a string  */
-void itoa_reverse(char str[], int length)
+void k_itoa_reverse(char str[], int length)
 {
     int start = 0;
     int end = length -1;
@@ -228,7 +228,7 @@ char* k_itoa(int num, char* str, int base)
     str[i] = '\0'; // Append string terminator
  
     // Reverse the string
-    itoa_reverse(str, i);
+    k_itoa_reverse(str, i);
  
     return str;
 }

@@ -29,10 +29,14 @@ static void initiailze() {
     HANDLE              hFind = INVALID_HANDLE_VALUE;
     DWORD               dwError = 0;
 
-
+#if (_WIN32_WCE >= 200) // WIN CE Ver 2.0+
     GetModuleFileName(NULL, szExeName, MAX_PATH);
     removeFileNameInPath(szExeName);
-    wsprintf(szDir, _T("%s\\*.kwf"), szExeName);
+#else
+    // GetModuleFileName not exist in CE1.x
+    wcscpy(szExeName, _T(""));
+#endif
+    wsprintf(szDir, _T("%s*.kwf"), szExeName);
 
     hFind = FindFirstFile(szDir, &ffd);
 

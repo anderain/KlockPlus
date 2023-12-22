@@ -450,7 +450,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 CPP=cl.exe
 # ADD BASE CPP /nologo /MLd /W3 /Gm /Zi /Od /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "WIN32" /D "STRICT" /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "_WIN32_WCE_EMULATION" /D "INTERNATIONAL" /D "USA" /D "INTLMSG_CODEPAGE" /D "_DEBUG" /D "x86" /D "i486" /D "_x86_" /D "_MBCS" /YX /c
-# ADD CPP /nologo /MLd /W3 /Gm /Zi /Od /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "WIN32" /D "STRICT" /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "_WIN32_WCE_EMULATION" /D "INTERNATIONAL" /D "USA" /D "INTLMSG_CODEPAGE" /D "_DEBUG" /D "x86" /D "i486" /D "_x86_" /D "_MBCS" /YX /c
+# ADD CPP /nologo /MLd /W3 /Gm /Zi /Od /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "WIN32" /D "STRICT" /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "_WIN32_WCE_EMULATION" /D "INTERNATIONAL" /D "USA" /D "INTLMSG_CODEPAGE" /D "_DEBUG" /D "x86" /D "i486" /D "_x86_" /D "_MBCS" /FR /YX /c
 RSC=rc.exe
 # ADD BASE RSC /l 0x804 /d UNDER_CE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "WIN32" /d "STRICT" /d _WIN32_WCE=$(CEVersion) /d "$(CEConfigName)" /d "_WIN32_WCE_EMULATION" /d "INTERNATIONAL" /d "USA" /d "INTLMSG_CODEPAGE" /d "_DEBUG" /d "x86" /d "i486" /d "_x86_"
 # ADD RSC /l 0x804 /d UNDER_CE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "WIN32" /d "STRICT" /d _WIN32_WCE=$(CEVersion) /d "$(CEConfigName)" /d "_WIN32_WCE_EMULATION" /d "INTERNATIONAL" /d "USA" /d "INTLMSG_CODEPAGE" /d "_DEBUG" /d "x86" /d "i486" /d "_x86_"
@@ -2379,9 +2379,6 @@ DEP_CPP_ASSET=\
 	"..\graphics\generated\Osb_b.c"\
 	"..\graphics\generated\Osb_close.c"\
 	
-NODEP_CPP_ASSET=\
-	"..\graphics\generated\Ce_calc_frame.c"\
-	
 
 !ELSEIF  "$(CFG)" == "KlockPlusCE - Win32 (WCE MIPS) Debug"
 
@@ -2417,9 +2414,6 @@ DEP_CPP_ASSET=\
 	"..\graphics\generated\Osb_b.c"\
 	"..\graphics\generated\Osb_close.c"\
 	
-NODEP_CPP_ASSET=\
-	"..\graphics\generated\Ce_calc_frame.c"\
-	
 
 !ELSEIF  "$(CFG)" == "KlockPlusCE - Win32 (WCE SH4) Debug"
 
@@ -2453,9 +2447,6 @@ DEP_CPP_ASSET=\
 	"..\graphics\generated\Osb_b.c"\
 	"..\graphics\generated\Osb_close.c"\
 	
-NODEP_CPP_ASSET=\
-	"..\graphics\generated\Ce_calc_frame.c"\
-	
 
 !ELSEIF  "$(CFG)" == "KlockPlusCE - Win32 (WCE SH3) Debug"
 
@@ -2488,9 +2479,6 @@ DEP_CPP_ASSET=\
 	"..\graphics\generated\Osb_arrow_up.c"\
 	"..\graphics\generated\Osb_b.c"\
 	"..\graphics\generated\Osb_close.c"\
-	
-NODEP_CPP_ASSET=\
-	"..\graphics\generated\Ce_calc_frame.c"\
 	
 
 !ELSEIF  "$(CFG)" == "KlockPlusCE - Win32 (WCE ARM) Debug"
